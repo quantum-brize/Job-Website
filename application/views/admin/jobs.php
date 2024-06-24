@@ -25,15 +25,66 @@
                         </div>
 
                         <div class="card-body">
-                            <form action="<?= base_url('admin/pages/add_job') ?>" method="POST"
-                                onsubmit="return submitForm()">
+                            <form action="<?=base_url('admin/pages/add_job')?>" method="POST" onsubmit="return submitForm()">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="category">Category</label>
+                                            <select class="form-control" id="category" name="category" required>
+                                                <option value="">Select a category...</option>
+                                                <option value="category1">Category 1</option>
+                                                <option value="category2">Category 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Expire date</label>
+                                            <input type="date" class="form-control" name="expire_date" required>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Jobs title</label>
                                     <textarea type="text" class="form-control" name="title" required></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">Jobs details</label>
-                                    <textarea name="details" id="editor"></textarea>
+                                    <textarea name="details" id="editor_1"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Location</label>
+                                    <input type="text" class="form-control" name="location"></input>
+                                </div>
+                                <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput2">Position</label>
+                                        <input type="number" class="form-control" name="position"></input>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="formGroupExampleInput2">Experience</label>
+                                        <input type="text" class="form-control" name="experience"></input>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="formGroupExampleInput2">Salary</label>
+                                            <input type="text" class="form-control" name="salary"></input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Key responsibilities</label>
+                                    <textarea name="responsibilities" id="editor_2"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="formGroupExampleInput2">Skills</label>
+                                    <textarea name="skills" id="editor_3"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-success" value="Add">
@@ -70,27 +121,27 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        if (!empty($jobs)) {
-                                            foreach ($jobs as $index => $item) {
-                                                ?>
+if (!empty($jobs)) {
+    foreach ($jobs as $index => $item) {
+        ?>
                                                 <tr>
                                                     <td>
-                                                        <?= $item['title'] ?>
+                                                        <?=$item['title']?>
                                                     </td>
                                                     <td>
-                                                        <?= $item['details'] ?>
+                                                        <?=$item['details']?>
                                                     </td>
                                                     <td>
-                                                        <a href="<?= base_url('admin/pages/delete_job?uid=') . $item['uid'] ?> "
+                                                        <a href="<?=base_url('admin/pages/delete_job?uid=') . $item['uid']?> "
                                                             class="btn btn-danger">
                                                             DELETE
                                                         </a>
                                                     </td>
                                                 </tr>
                                                 <?php
-                                            }
-                                        }
-                                        ?>
+}
+}
+?>
                                     </tbody>
                                 </table>
                             </div>
@@ -127,33 +178,33 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        if (!empty($jobs_req)) {
-                                            foreach ($jobs_req as $index => $item) {
-                                                ?>
+if (!empty($jobs_req)) {
+    foreach ($jobs_req as $index => $item) {
+        ?>
                                                 <tr>
                                                     <td>
-                                                        <?= $item['created_at'] ?>
+                                                        <?=$item['created_at']?>
                                                     </td>
                                                     <td>
-                                                        <?= $item['name'] ?>
+                                                        <?=$item['name']?>
                                                     </td>
                                                     <td>
-                                                        <?= $item['email'] ?>
+                                                        <?=$item['email']?>
                                                     </td>
                                                     <td>
-                                                        <?= $item['phone'] ?>
+                                                        <?=$item['phone']?>
                                                     </td>
                                                     <td>
-                                                        <?= $item['job'] ?>
+                                                        <?=$item['job']?>
                                                     </td>
                                                     <td>
-                                                        <a class="btn btn-success" href=" <?=base_url() . $item['file_path'] ?>">View cv</a>
+                                                        <a class="btn btn-success" href=" <?=base_url() . $item['file_path']?>">View cv</a>
                                                     </td>
                                                 </tr>
                                                 <?php
-                                            }
-                                        }
-                                        ?>
+}
+}
+?>
                                     </tbody>
                                 </table>
                             </div>
