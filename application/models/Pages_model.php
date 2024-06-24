@@ -464,8 +464,16 @@ class Pages_model extends Admin_model
     public function add_job($data){
         $insert_data = [
             'uid' => $this->generate_uid('JOB'),
+            'category_id' => $data['category'],
             'title' =>  $data['title'],
-            'details' => $data['details']
+            'details' => $data['details'],
+            'expire_date' => $data['expire_date'],
+            'location' => $data['location'],
+            'position' => $data['position'],
+            'experience' => $data['experience'],
+            'salary' => $data['salary'],
+            'key_responsiblities' => $data['responsibilities'],
+            'skills' => $data['skills'],
         ];
         $this->db->insert('job_openings', $insert_data);
     }
@@ -481,6 +489,17 @@ class Pages_model extends Admin_model
         }else{
             false;
         };
+    }
+
+    public function get_categories()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('categories')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        return isset($data) ? $data : [];
     }
 
     public function add_new_about_banner($path)
