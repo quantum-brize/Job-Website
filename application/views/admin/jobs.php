@@ -32,8 +32,11 @@
                                             <label for="category">Category</label>
                                             <select class="form-control" id="category" name="category" required>
                                                 <option value="">Select a category...</option>
-                                                <option value="category1">Category 1</option>
-                                                <option value="category2">Category 2</option>
+                                                <?php if(!empty($categories)){
+                                                    foreach($categories as $category){
+                                                ?>
+                                                    <option value="<?= $category['uid']?>"><?= $category['name']?></option>
+                                                <?php }}?>
                                             </select>
                                         </div>
                                     </div>
