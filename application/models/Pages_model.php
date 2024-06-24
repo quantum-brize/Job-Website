@@ -470,6 +470,18 @@ class Pages_model extends Admin_model
         $this->db->insert('job_openings', $insert_data);
     }
 
+    public function add_category($data){
+        $insert_data = [
+            'uid' => $this->generate_uid('CAT'),
+            'name' =>  $data['name']
+        ];
+        $add_data = $this->db->insert('categories', $insert_data);
+        if($add_data){
+            return true;
+        }else{
+            false;
+        };
+    }
 
     public function add_new_about_banner($path)
     {
