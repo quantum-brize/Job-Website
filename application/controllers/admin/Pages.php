@@ -241,9 +241,17 @@ class Pages extends Admin
         redirect('/admin/jobs');
     }
 
+    public function add_category(){
+        $this->init_model(MODEL_PAGES);
+        $insert_cat_data = $this->Pages_model->add_category($this->input->post());
+        if($insert_cat_data){
+            echo "Data has been successfully added!";
+        }else{
+            echo "Current data addition was unsuccessful!";
+        };
+    }
 
-    public function update_banner_text()
-    {
+    public function update_banner_text(){
         $this->init_model(MODEL_PAGES);
         $this->Pages_model->update_banner_text($this->input->post());
         redirect('/admin/home');
