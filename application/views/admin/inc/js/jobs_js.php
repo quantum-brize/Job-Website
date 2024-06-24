@@ -6,7 +6,9 @@
     $(document).ready(function () {
         $('#job_dataTable').DataTable();
     });
-    CKEDITOR.replace('editor');
+    CKEDITOR.replace('editor_1');
+    CKEDITOR.replace('editor_2');
+    CKEDITOR.replace('editor_3');
     function submitForm() {
         // Update the textarea with the CKEditor data
         for (var instance in CKEDITOR.instances) {
