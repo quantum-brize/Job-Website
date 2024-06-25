@@ -7,6 +7,8 @@
     <title>Login Form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- eye icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <style>
         /* Custom styles */
@@ -82,31 +84,35 @@
         .signup-link {
             text-align: center;
             margin-top: 20px;
+            font-size: 14px;
         }
 
         .signup-link a {
             color: #007bff;
         }
+        #showHidePassword {
+            cursor: pointer;
+        }
+        
+        .btn{
+            background-color: #01cdc9;
+            color: #fff;
+        }
+        .btn:hover{
+            background-color: #29efeb;
+            color: #fff;
+        }
 
         .input-group-append {
             position: absolute;
-            right: 10px;
-            top: 75%;
+            right: 4px;
+            top: 73%;
             transform: translateY(-50%);
             cursor: pointer;
         }
 
         #showHidePassword {
             cursor: pointer;
-        }
-
-        .style_ele1{
-            position: absolute;
-            height: 500px;
-            width: 500px;
-            background-color: #fff;
-            top: 50px;
-            left: 100px;
         }
     </style>
 </head>
@@ -134,16 +140,18 @@
                     <input type="checkbox" class="form-check-input" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                <button type="submit" class="btn btn-block">Sign In</button>
             </form>
             <div class="signup-link">
-                <p>Don't have an account? <a href="#">Sign Up</a></p>
+                <p>Don't have an account? <a href="web/load/load_user_signup">Sign Up</a></p>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Custom JS -->
     <script>
         $(document).ready(function () {
@@ -161,6 +169,8 @@
             });
         });
     </script>
+
+
 </body>
 
 </html>
