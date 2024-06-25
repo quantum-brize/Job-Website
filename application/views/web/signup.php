@@ -158,11 +158,10 @@
                             </span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-block">Sign Up</button>
+                <button type="button" id="signupBtn" class="btn btn-block">Sign In</button>
                 <div class="Login-link text-center mt-3">
                     <p>Already have an account? <a href="web/load/load_user_login" class="">Sign in</a></p>
                 </div>
-                <button type="button" id="signupBtn" class="btn btn-block">Sign In</button>
                 <div class="Terms-link text-left fst-italic">
                     <p>By registering you to the Store <a href="#">Terms of use</a></p>
                 </div>

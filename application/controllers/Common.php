@@ -177,7 +177,7 @@ class Common extends CI_Controller
 			$resp = [
 				KEY_MESSAGE => 'Please enter confirm password',
 			];
-		}else if($this->input->post('Password') != $this->input->post('confirmPassword')){
+		}else if($this->input->post('password') != $this->input->post('confirmPassword')){
 			$resp = [
 				KEY_MESSAGE => 'Password and confirm password should be same',
 			];
