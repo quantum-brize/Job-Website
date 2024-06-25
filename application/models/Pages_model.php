@@ -509,17 +509,17 @@ class Pages_model extends Admin_model
             ->get();
 
         $user = $user->result_array();
-        //$this->prd($banner);
-        return isset($user) ? $user[0] : [];
+        // $this->prd($user);
+        return !empty($user) ? $user[0] : [];
     }
 
     public function add_signup_data($data){
         $insert_data = [
             'uid' => $this->generate_uid('USR'),
-            'user_name' =>  $data['name'],
-            'email' =>  $data['name'],
-            'phone' =>  $data['name'],
-            'password' =>  md5($data['name']),
+            'user_name' =>  $data['userName'],
+            'email' =>  $data['email'],
+            'phone' =>  $data['phone'],
+            'password' =>  md5($data['password']),
             'type' =>  'user',
         ];
         $add_data = $this->db->insert('users', $insert_data);

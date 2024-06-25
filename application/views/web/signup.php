@@ -8,6 +8,10 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Toastify CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Custom CSS -->
     <style>
         /* Custom styles */
@@ -148,7 +152,7 @@
                             </span>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-block">Sign In</button>
+                <button type="button" id="signupBtn" class="btn btn-block">Sign In</button>
                 <div class="Terms-link text-left fst-italic">
                     <p>By registering you to the Store <a href="#">Terms of use</a></p>
                 </div>
@@ -158,6 +162,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Toastify JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Custom JS -->
     <script>
         $(document).ready(function () {
@@ -174,6 +181,65 @@
                 }
             });
         });
+
+        $('#signupBtn').click(function () {
+                let userName = $('#username').val();
+                let email = $('#email').val();
+                let phone = $('#number').val();
+                let password = $('#password').val();
+                let confirmPassword = $('#Confirm_password').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?= base_url('Common/signup') ?>',
+                    data: {
+                        userName: userName,
+                        email: email,
+                        phone: phone,
+                        password: password,
+                        confirmPassword: confirmPassword,
+                    },
+                    beforeSend: function () {
+                        $('#signupBtn').prop("disabled", true)
+                        $('#signupBtn').html(`<div class="spinner-border text-light"></div>`)
+                    },
+                    success: function (resp) {
+                        resp = JSON.parse(resp)
+                        console.log(resp)
+                        Toastify({
+                            text: resp.message.toUpperCase(),
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: resp.status ? 'darkgreen' : 'darkred',
+                            },
+
+                        }).showToast();
+                        if (resp.status) {
+                            setTimeout(function () {
+                                location.href = '<?= base_url('signup-success') ?>'
+                            }, 1000)
+                        }
+                    },
+                    error: function (err) {
+                        Toastify({
+                            text: 'Server Error',
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: 'darkred',
+                            },
+
+                        }).showToast();
+                    },
+                    complete: function(){
+                        $('#signupBtn').prop("disabled", false)
+                        $('#signupBtn').html(`Sign In`)
+                    }
+                })
+            })
     </script>
 </body>
 

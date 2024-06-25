@@ -131,21 +131,79 @@ class Common extends CI_Controller
 		return array_keys($keys) !== $keys;
 	}
 
-	public function signup(){
-        $this->init_model(MODEL_PAGES);
-		$is_user_exist = $this->Pages_model->get_a_user($this->input->post('email'));
-		if(empty($is_user_exist)){
-			$is_signup_success = $this->Pages_model->add_signup_data($this->input->post());
-			if($is_signup_success){
-				redirect('/signup-success');
-			}else{
-				redirect('/signup', $data['signup_data'] = 'Faild to signup! try again');
-			}
-		}else {
-			redirect('/signup', $data['signup_data']= 'User already exist');
-		}
+	// public function signup(){
+    //     $this->init_model(MODEL_PAGES);
+	// 	$is_user_exist = $this->Pages_model->get_a_user($this->input->post('email'));
+	// 	if(empty($is_user_exist)){
+	// 		$is_signup_success = $this->Pages_model->add_signup_data($this->input->post());
+	// 		if($is_signup_success){
+	// 			redirect('/signup-success');
+	// 		}else{
+	// 			redirect('/signup', $data['signup_data'] = 'Faild to signup! try again');
+	// 		}
+	// 	}else {
+	// 		redirect('/signup', $data['signup_data']= 'User already exist');
+	// 	}
        
         
+    // }
+
+	public function signup()
+    {
+		// $userName = $this->input->post('userName');
+        // $password = $this->input->post('password');
+		$resp = [
+            KEY_STATUS => false,
+            KEY_MESSAGE => '',
+            KEY_TYPE => ''
+        ];
+		if(empty($this->input->post('email'))){
+			$resp = [
+				KEY_MESSAGE => 'Please enter email',
+			];
+		}else if(empty($this->input->post('userName'))){
+			$resp = [
+				KEY_MESSAGE => 'Please enter user name',
+			];
+		}else if(empty($this->input->post('phone'))){
+			$resp = [
+				KEY_MESSAGE => 'Please enter phone no',
+			];
+		}else if(empty($this->input->post('password'))){
+			$resp = [
+				KEY_MESSAGE => 'Please enter password',
+			];
+		}else if(empty($this->input->post('confirmPassword'))){
+			$resp = [
+				KEY_MESSAGE => 'Please enter confirm password',
+			];
+		}else if($this->input->post('Password') != $this->input->post('confirmPassword')){
+			$resp = [
+				KEY_MESSAGE => 'Password and confirm password should be same',
+			];
+		} else{
+			$this->init_model(MODEL_PAGES);
+			$is_user_exist = $this->Pages_model->get_a_user($this->input->post('email'));
+			if(empty($is_user_exist)){
+				$is_signup_success = $this->Pages_model->add_signup_data($this->input->post());
+				if($is_signup_success){
+					$resp = [
+						KEY_STATUS => true,
+						KEY_MESSAGE => 'Successfully signed up',
+					];
+				}else{
+					$resp = [
+						KEY_MESSAGE => 'Faild to sign up!',
+					];
+				}
+			}else{
+				$resp = [
+					KEY_MESSAGE => 'User already exist!',
+				];
+			}
+		}
+        
+        return $this->response($resp);
     }
 
 }
