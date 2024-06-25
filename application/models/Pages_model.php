@@ -26,16 +26,24 @@ class Pages_model extends Admin_model
         return isset($banner) ? $banner[0] : [];
     }
 
+    // public function get_jobs(){
+    //     $data = $this->db
+    //         ->select('*')
+    //         ->from('job_openings')
+    //         ->get();
+    //     $data = $data->result_array();
+    //     //$this->prd($banner);
+    //     return isset($data) ? $data : [];
+    // }
+
     public function get_jobs(){
         $data = $this->db
-            ->select('*')
+            ->select('job_openings.*, categories.name as category_name') // Select fields from both tables
             ->from('job_openings')
+            ->join('categories', 'categories.uid = job_openings.category_id', 'left') // Join with categories table
             ->get();
-
-
         $data = $data->result_array();
-        //$this->prd($banner);
-        return isset($data) ? $data : [];
+        return !empty($data) ? $data : [];
     }
 
     public function get_all_about_text()

@@ -119,20 +119,52 @@
                                         <tr>
                                             <th>job title</th>
                                             <th>job Deatils</th>
+                                            <th>Category</th>
+                                            <th>Location</th>
+                                            <th>Expire Date</th>
+                                            <th>Position</th>
+                                            <th>Experience</th>
+                                            <th>Salary</th>
+                                            <th>Key Responsiblities</th>
+                                            <th>Skills</th>
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-if (!empty($jobs)) {
-    foreach ($jobs as $index => $item) {
-        ?>
+                                            if (!empty($jobs)) {
+                                                foreach ($jobs as $index => $item) {
+                                        ?>
                                                 <tr>
                                                     <td>
                                                         <?=$item['title']?>
                                                     </td>
                                                     <td>
                                                         <?=$item['details']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['category_name']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['location']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['expire_date']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['position']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['experience']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['salary']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['key_responsiblities']?>
+                                                    </td>
+                                                    <td>
+                                                        <?=$item['skills']?>
                                                     </td>
                                                     <td>
                                                         <a href="<?=base_url('admin/pages/delete_job?uid=') . $item['uid']?> "
