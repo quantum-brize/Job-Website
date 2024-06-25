@@ -499,6 +499,37 @@ class Pages_model extends Admin_model
         };
     }
 
+    public function get_a_user($email)
+    {
+
+        $user = $this->db
+            ->select('*')
+            ->from('users')
+            ->where(['email' => $email])
+            ->get();
+
+        $user = $user->result_array();
+        //$this->prd($banner);
+        return isset($user) ? $user[0] : [];
+    }
+
+    public function add_signup_data($data){
+        $insert_data = [
+            'uid' => $this->generate_uid('USR'),
+            'user_name' =>  $data['name'],
+            'email' =>  $data['name'],
+            'phone' =>  $data['name'],
+            'password' =>  md5($data['name']),
+            'type' =>  'user',
+        ];
+        $add_data = $this->db->insert('users', $insert_data);
+        if($add_data){
+            return true;
+        }else{
+            false;
+        };
+    }
+
     public function get_categories()
     {
         $data = $this->db

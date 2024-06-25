@@ -131,6 +131,23 @@ class Common extends CI_Controller
 		return array_keys($keys) !== $keys;
 	}
 
+	public function signup(){
+        $this->init_model(MODEL_PAGES);
+		$is_user_exist = $this->Pages_model->get_a_user($this->input->post('email'));
+		if(empty($is_user_exist)){
+			$is_signup_success = $this->Pages_model->add_signup_data($this->input->post());
+			if($is_signup_success){
+				redirect('/signup-success');
+			}else{
+				redirect('/signup', $data['signup_data'] = 'Faild to signup! try again');
+			}
+		}else {
+			redirect('/signup', $data['signup_data']= 'User already exist');
+		}
+       
+        
+    }
+
 }
 
 ?>
