@@ -153,6 +153,24 @@ class Load extends Common
         $this->load_page('web/quality.php', $data);
     }
 
+    public function load_user_signup()
+	{
+		$this->load->view('web/signup');
+
+	}
+
+    public function load_user_signup_success()
+	{
+		$this->load->view('web/signup_success');
+
+	}
+
+    public function load_user_login()
+	{
+		$this->load->view('web/login');
+
+	}
+
 
 
 
