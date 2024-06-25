@@ -7,6 +7,7 @@
     <title>Signup Form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- eye icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Toastify CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
@@ -87,10 +88,15 @@
         .Terms-link {
             text-align: center;
             margin-top: 20px;
-            font: italic;
+            color: gray;
+            font-size: 12px;
         }
         .Terms-link a {
             color: #007bff;
+        }
+
+        .Login-link{
+            font-size: 14px;
         }
 
         .btn{
@@ -104,8 +110,8 @@
 
         .input-group-append {
             position: absolute;
-            right: 10px;
-            top: 75%;
+            right: 4px;
+            top: 73%;
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -147,10 +153,14 @@
                     <label for="password">Confirm Password *</label>
                     <input type="password" class="form-control" id="Confirm_password" placeholder="Enter your password">
                     <div class="input-group-append">
-                            <span class="input-group-text" id="showHidePassword">
+                            <span class="input-group-text" id="showHideConPassword">
                                 <i class="fa fa-eye-slash"></i>
                             </span>
                     </div>
+                </div>
+                <button type="submit" class="btn btn-block">Sign Up</button>
+                <div class="Login-link text-center mt-3">
+                    <p>Already have an account? <a href="web/load/load_user_login" class="">Sign in</a></p>
                 </div>
                 <button type="button" id="signupBtn" class="btn btn-block">Sign In</button>
                 <div class="Terms-link text-left fst-italic">
@@ -166,10 +176,25 @@
     <!-- Toastify JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Custom JS -->
+   <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Custom JS -->
     <script>
         $(document).ready(function () {
             $('#showHidePassword').click(function () {
                 var passwordInput = $('#password');
+                var passwordIcon = $(this).find('i');
+
+                if (passwordInput.attr('type') === 'password') {
+                    passwordInput.attr('type', 'text');
+                    passwordIcon.removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    passwordInput.attr('type', 'password');
+                    passwordIcon.removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+            $('#showHideConPassword').click(function () {
+                var passwordInput = $('#Confirm_password');
                 var passwordIcon = $(this).find('i');
 
                 if (passwordInput.attr('type') === 'password') {
@@ -241,6 +266,7 @@
                 })
             })
     </script>
+
 </body>
 
 </html>
