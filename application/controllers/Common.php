@@ -206,6 +206,48 @@ class Common extends CI_Controller
         return $this->response($resp);
     }
 
+	public function user_login()
+    {
+        $email = $this->input->post('userEmail');
+        $password = $this->input->post('password');
+        $resp = [
+            KEY_STATUS => false,
+            KEY_MESSAGE => '',
+            KEY_TYPE => ''
+        ];
+        if (!empty($email) && !empty($password)) {
+            $this->init_model(MODEL_ADMIN);
+            $is_user = $this->Admin_model->is_user($email, md5($password));
+            $resp[KEY_STATUS] = !empty($is_user);
+            $resp[KEY_TYPE] = !empty($is_user) ? $is_user[KEY_TYPE] : '';
+			
+            if ($resp[KEY_STATUS]) {
+
+                if ($is_user[KEY_TYPE] == 'user') {
+
+                    $this->session->set_userdata(SES_USER_ID, $is_user[KEY_UID]);
+                    $this->session->set_userdata(SES_USER_NAME, $is_user[KEY_USER_NAME]);
+                    $this->session->set_userdata(SES_USER_TYPE, $is_user[KEY_TYPE]);
+
+                }
+            }
+        }
+        $resp[KEY_MESSAGE] = $resp[KEY_STATUS] ? 'user found' : 'user not found';
+        return $this->response($resp);
+    }
+
+	public function user_logout()
+    {
+        if ($this->session->userdata(SES_USER_TYPE) == 'user') {
+
+            $this->session->unset_userdata(SES_USER_ID);
+            $this->session->unset_userdata(SES_USER_NAME);
+            $this->session->unset_userdata(SES_USER_TYPE);
+
+        } 
+        redirect('login');
+    }
+
 }
 
 ?>

@@ -86,6 +86,10 @@ define('SES_SUB_ADMIN_ID', 'sub_admin_id');
 define('SES_SUB_ADMIN_NAME', 'sub_admin_name');
 define('SES_TYPE', 'type');
 
+define('SES_USER_ID', 'user_id');
+define('SES_USER_TYPE', 'user_type');
+define('SES_USER_NAME', 'user_name');
+
 ////////////////////////////////////////////__USERS
 define('USER_ADMIN', 'admin');
 define('USER_SUB_ADMIN', 'sub_admin');

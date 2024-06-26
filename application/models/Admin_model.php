@@ -24,6 +24,19 @@ class Admin_model extends Common_model {
 
     }
 
+    public function is_user($email, $password){
+        $user = $this->db
+                        ->select('user_name,uid, type')
+                        ->from(TABLE_USER)
+                        ->where('email', $email)
+                        ->where('password', $password)
+                        ->get();
+
+        $user = $user->result_array();
+        return isset($user[0]) ? $user[0]: [];
+
+    }
+
 }
 
 ?>

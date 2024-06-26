@@ -104,7 +104,7 @@
             </div>
             <p class="title text-center">Well done !</p>
             <p class="msg text-center">Your account is created successfully! </p>
-            <button type="submit" class="btn btn-block mb-6">Sign In</button>
+            <a href="<?= base_url('login')?>" type="submit" class="btn btn-block mb-6">Sign In</a>
         </div>
     </div>
 

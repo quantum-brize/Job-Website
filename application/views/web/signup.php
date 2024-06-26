@@ -191,7 +191,7 @@
                 </div>
                 <button type="button" id="signupBtn" class="btn btn-block">Sign In</button>
                 <div class="Login-link text-center mt-3">
-                    <p>Already have an account? <a href="web/load/load_user_login" class="">Sign in</a></p>
+                    <p>Already have an account? <a href="<?= base_url('login')?>" class="">Sign in</a></p>
                 </div>
                 <div class="Terms-link text-left fst-italic">
                     <p>By registering you to the Store <a href="#">Terms of use</a></p>
@@ -205,7 +205,6 @@
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Toastify JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <!-- Custom JS -->
    <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Custom JS -->

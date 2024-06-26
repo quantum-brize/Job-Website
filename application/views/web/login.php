@@ -7,8 +7,12 @@
     <title>Login Form</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <!-- eye icon -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- eye icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Toastify CSS CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Custom CSS -->
     <style>
         /* Custom styles */
@@ -154,8 +158,8 @@
             <p class="msg text-center">Sign in to continue</p>
             <form>
                 <div class="form-group">
-                    <label for="emailOrNumber">Email or Number</label>
-                    <input type="text" class="form-control" id="emailOrNumber" placeholder="Enter your email or number">
+                    <label for="emailOrNumber">Email</label>
+                    <input type="text" class="form-control" id="userEmail" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -170,7 +174,7 @@
                     <input type="checkbox" class="form-check-input" id="rememberMe">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                 </div>
-                <button type="submit" class="btn btn-block">Sign In</button>
+                <button type="button" id="loginBtn" class="btn btn-block">Sign In</button>
             </form>
             <div class="signup-link">
                 <p>Don't have an account? <a href="web/load/load_user_signup">Sign Up</a></p>
@@ -181,6 +185,11 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Toastify JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Custom JS -->
+   <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Custom JS -->
     <script>
@@ -198,6 +207,58 @@
                 }
             });
         });
+
+        $('#loginBtn').click(function () {
+                let userEmail = $('#userEmail').val();
+                let password = $('#password').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?= base_url('Common/user_login') ?>',
+                    data: {
+                        userEmail: userEmail,
+                        password: password
+                    },
+                    beforeSend: function () {
+                        $('#loginBtn').prop("disabled", true)
+                        $('#loginBtn').html(`<div class="spinner-border text-light"></div>`)
+                    },
+                    success: function (resp) {
+                        resp = JSON.parse(resp)
+                        Toastify({
+                            text: resp.message.toUpperCase(),
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: resp.status ? 'darkgreen' : 'darkred',
+                            },
+
+                        }).showToast();
+                        if (resp.status) {
+                            setTimeout(function () {
+                                location.href = '<?= base_url('') ?>'
+                            }, 1000)
+                        }
+                    },
+                    error: function (err) {
+                        Toastify({
+                            text: 'Server Error',
+                            duration: 3000,
+                            position: "center",
+                            stopOnFocus: true,
+                            style: {
+                                background: 'darkred',
+                            },
+
+                        }).showToast();
+                    },
+                    complete: function(){
+                        $('#loginBtn').prop("disabled", false)
+                        $('#loginBtn').html(`Sign In`)
+                    }
+                })
+            })
     </script>
 
 
