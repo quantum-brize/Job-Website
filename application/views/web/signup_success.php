@@ -64,11 +64,40 @@
             color: #fff;
         }
 
+        .container {
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .bg_style1 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            z-index: -1;
+            top: -200px;
+            right: 100px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(254, 144, 144, 0.5), transparent);
+        }
+        .bg_style2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            z-index: -1;
+            top: 300px;
+            left: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
+        }
+
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="bg_style1"></div>
+        <div class="bg_style2"></div>
+
         <div class="success-card">
             <div class="right_tick_icon mb-4">
                 <div class="tick_icon"></div>
