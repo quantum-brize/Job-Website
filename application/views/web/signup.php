@@ -20,7 +20,6 @@
             position: relative;
             background-color: lightskyblue;
         }
-
         .title{
             font-weight: 400;
             margin-bottom: 5px !important;
@@ -35,6 +34,7 @@
         .signup-form {
             background-color: #e9faff !important;
             max-width: 450px;
+            height: auto;
             margin: 12% auto;
             padding: 30px;
             background: #fff;
@@ -119,11 +119,42 @@
         #showHidePassword {
             cursor: pointer;
         }
+
+        .container {
+            position: relative;
+            overflow: hidden; 
+        }
+
+        .bg_style1 {
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            z-index: -1;
+            top: -200px;
+            right: 600px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
+        }
+
+        .bg_style2 {
+            position: absolute;
+            width: 2000px;
+            height: 2000px;
+            z-index: -1;
+            bottom: -500px;
+            left: -900px;
+            background: linear-gradient(-45deg, rgba(255, 255, 255, 0.7), transparent);
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="container">
+        <div class="bg_style1"></div>
+        <div class="bg_style2"></div>
         <div class="signup-form">
             <h2 class="title">Create New Account</h2>
             <p class="msg text-center">Get your free account now</p>
