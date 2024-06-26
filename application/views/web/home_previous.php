@@ -189,289 +189,6 @@ if (false) {
         crossorigin="anonymous"></script>
     <!-- datepicker -->
     <script src="https://cdn.wizemen.net/plugins/datepicker/bootstrap-datepicker.js"></script>
-
-    <style>
-
-      /* banner CSS  */
-    .carousel-item {
-      height: 100vh;
-      position: relative;
-    }
-
-    .carousel-item img {
-      object-fit: cover;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
-    }
-
-    .carousel_captions {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      width: 80%; 
-    }
-
-    .carousel_captions h1 {
-      font-size: 50px;
-      font-weight: 400;
-      color: #000;
-    }
-
-    .carousel_captions .p1 {
-      font-size: 50px;
-      font-weight: 700;
-      color: #2734e3;
-    }
-
-    .carousel_captions .p2 {
-      margin-top: 16px;
-      font-size: 17px;
-      font-weight: 700;
-      color: #dadada;
-    }
-
-    .search-area {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      width: 60%;
-      margin-bottom: 30px;
-    }
-
-    .from_wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .search-area .form-control {
-      border-radius: 20px 0 0 20px;
-      width: 430px;
-      height: 50px; 
-      padding: 25px; 
-    }
-
-    .search-area .btn-primary {
-      border-radius: 0 20px 20px 0;
-      height: 50px;
-      min-width: 80px; 
-      padding: 10px 25px; 
-      margin-bottom: 0;
-    }
-
-
-
-    /* popular job categories css */
-
-        .heading-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .heading-container::before,
-        .heading-container::after {
-            content: '';
-            flex: 1;
-            border-bottom: 4px solid lightblue;
-            margin: 0 60px;
-            opacity: 0.6;
-        }
-
-        .heading-container h2 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 30px;
-            white-space: nowrap;
-        }
-    .card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      border: none;
-      border-radius: 20px;
-      background-color: #eeeeee;
-      transition: transform 0.2s ease;
-      cursor: pointer;
-        
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .card-img-top {
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 1.25rem;
-    }
-
-    .card-title {
-      text-align: center;
-      font-size: 25px;
-      color: #000;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .card-text {
-      text-align: center;
-      font-size: 15px;
-      font-weight: 500;
-      color: #007bff;
-    }
-
-    .btn-browse-all {
-      background-color: #007bff;
-      color: #fff;
-      border-color: #007bff;
-      padding: 0.75rem 2rem;
-      font-size: 1.25rem;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-browse-all:hover {
-      background-color: #419bfa;
-      color: #fff;
-    }
-
-    .user-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-top: 15px;
-    background-color: #61b7f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 7px solid #61b7f1;
-  }
-  
-  .inner-circle-big {
-    bottom: -15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-  
-  }
-  .inner-circle-small {
-    top: 10px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-  }
-
-
-  /* latest job */
-  .latest-jobs {
-    background-color: #f8f9fa;
-    margin-bottom: 20px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 50px;
-}
-
-.job-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.style{
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
-    top: -8px;
-    left: -70px;
-    transform: rotate(60deg);
-
-}
-
-.job-icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-.job-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.job-category, .job-location {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.job-skill {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.job-skill span {
-    background: #e9ecef;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: #1967d3;
-}
-
-    .btn-primary {
-        background-color: #007bff;
-        color: #fff;
-        border-color: #007bff;
-        padding: 0.75rem 2rem;
-        font-size: 1.25rem;
-        border-radius: 30px;
-        transition: background-color 0.3s ease;
-        margin-bottom: 50px;
-
-    }
-
-    .btn-browse-all:hover {
-        background-color: #419bfa;
-        color: #fff;
-        }
-
-  </style>
 </head>
 
 <body id="topview">
@@ -497,10 +214,10 @@ if (false) {
     </div>
 
     <header id="home">
-        <!-- <div class="topheaderlogo">
+        <div class="topheaderlogo">
             <a href="<?= base_url() ?>"><img data-aos="fade-up" data-aos-duration="1500"
                     src="<?= base_url() ?>assets/images/logo.png" alt="logo"></a>
-        </div> -->
+        </div>
         <div class="headertop">
             <div class="headertop_left" onclick="menuopneview();" data-aos="fade-right" data-aos-duration="1500">
                 <p>Menu</p>
@@ -648,211 +365,179 @@ if (false) {
 
     <!--banner start-->
     <section class="banner_main">
-        
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <?php
-                    if (!empty($banner_images)) {
-                        foreach ($banner_images as $index => $item) {
-                            $banner_active = "";
-                            if($index == 0){
-                                $banner_active = 'active';
-                            }
-                ?>
-                <div class="carousel-item <?= $banner_active; ?>">
-                    <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" class="d-block w-100" alt="Image 1">
-                </div>
-                <?php
-                    }
-                }
-                ?>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+        <div class="bg-shadows"></div>
+        <div class="bannerslider owl-carousel owl-theme">
 
-        <div class="carousel_captions">
-            <h1>It's Easy to Find Your</h1>
-            <p class="p1">Join us & Explore Our of Jobs</p>
-            <p class="p2">Find Jobs, Employment & Career Opportunities</p>  
-        </div>
-
-        <div class="search-area">
-            <form action="#">
-                <div class="from_wrapper">
-                    <div class="form-group mb-0">
-                    <input type="text" class="form-control" placeholder="Search for jobs...">
+            <?php
+            if (!empty($banner_images)) {
+                foreach ($banner_images as $index => $item) {
+                    ?>
+                    <div class="item">
+                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <?php
+                }
+            }
+            ?>
+        </div>
+        <div class="bannertextviewcurve">
+            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading'] ?>
+            </div>
+            <div id="curved1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading_two'] ?>
+            </div>
+        </div>
+        <div class="fixtextbanner">
+
+            <p><?= $banner_text['corner_text'] ?><br /> <?= $banner_text['corner_text_two'] ?></p>
+        </div>
+        <div class="toptobottomfixed">
+            <a href="#aboutus">
+                <div class="toptobottom pulse">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
                 </div>
-            </form>
+            </a>
         </div>
     </section>
+    <!--banner end-->
 
-    <!--Job categories start-->
+
+    <!--welcome start-->
     <section class="welcome_main" id="aboutus">
-        <div class="container mt-5">
-            <div class="row">
-            <div class="col-12 text-center mb-4 heading-container">
-                <!-- <h2 class="cat_title">Job Categories</h2> -->
-                <h2>Popular Job Categories</h2>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <div class="card">
-                            <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Job Title 1</h5>
-                                <p class="card-text">10 positions available</p>
-                            </div>
+        <div class="auto-container">
+            <div class="row welcome_view">
+                <div class="image-column col-lg-6 col-md-6">
+                    <div class="inner-column">
+                        <div class="kids-title" data-aos="fade-left" data-aos-duration="1500"></div>
+                        <div class="pattern-layer"
+                            style="background-image:url(<?= base_url() ?>assets/images/pattern-15.png)">
                         </div>
-                    </a>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <div class="card">
-                            <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Job Title 1</h5>
-                                <p class="card-text">10 positions available</p>
-                            </div>
+                        <div class="patternleftright"
+                            style="background-image:url(<?= base_url() ?>assets/images/pattern-4.png)"></div>
+                        <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
+                            <img src="<?= base_url() . $about_img[0]['img_path'] ?>" />
                         </div>
-                    </a>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <div class="card">
-                            <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Job Title 1</h5>
-                                <p class="card-text">10 positions available</p>
-                            </div>
+                        <div class="image-two" data-aos="fade-right" data-aos-duration="1000">
+                            <img src="<?= base_url() . $about_img[1]['img_path'] ?>" />
                         </div>
-                    </a>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <div class="card">
-                            <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Job Title 1</h5>
-                                <p class="card-text">10 positions available</p>
-                            </div>
+                        <div class="image-three" data-aos="fade-up" data-aos-duration="1000">
+                            <img src="<?= base_url() . $about_img[2]['img_path'] ?>" />
                         </div>
-                    </a>
-            </div>
-            <div class="col-md-3 col-sm-6 mb-4">
-                    <a href="#">
-                        <div class="card">
-                            <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Job Title 1</h5>
-                                <p class="card-text">10 positions available</p>
-                            </div>
-                        </div>
-                    </a>    
-            </div>
-        </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <button class="btn btn-browse-all mt-4">Browse All</button>
+                    </div>
                 </div>
-            </div>
-    </div>
-    </section>
-    <!--Job categories end-->
+                <div class="content-column col-lg-6 col-md-6">
+                    <div class="inner-column">
+                        <div class="sec-title-two">
+                            <h2 data-aos="fade-up" data-aos-duration="1000">Welcome To <span
+                                    class="hedingone">Damiano</span></h2>
+                        </div>
+                        <div class="dark-text" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+                            <?= $about_text['about_text'] ?>
+                        </div>
+                        <div class="row">
+
+                            <div class="feature-column col-lg-12">
+                                <div class="feature-inner" data-aos="fade-up" data-aos-duration="2000"
+                                    data-aos-offset="0">
+                                    <div class="icon">
+                                        <img src="<?= base_url() ?>assets/images/vision.png" alt="Awesome Image">
+                                    </div>
+                                    <strong>Vision</strong>
+                                    <div class="showlinethree">
+                                        <p><?= $about_text['vision_text'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="feature-column col-lg-12">
+                                <div class="feature-inner" data-aos="fade-up" data-aos-duration="2000"
+                                    data-aos-offset="0">
+                                    <div class="icon"><img src="<?= base_url() ?>assets/images/mission.png" alt="#">
+                                    </div>
+                                    <strong>Mission</strong>
+                                    <div class="showlinethree">
+                                        <p><?= $about_text['mission_text'] ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
-    <!--Latest job search-->
-    <section class="latest-jobs py-5">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="heading-container col text-center">
-                    <h2 class="section-title">Latest Jobs</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="job-card">
-                            <div class="style"></div>
-                            <h3 class="job-title">Grafic designer</h3>
-                            <p class="job-category">Accountants</p>
-                            <p class="job-location">Karabuk, Karabuk, Turkey</p>
-                            <div class="job-skill">
-                                <span>Computer Skill</span>
-                                <span>4+</span>
-                            </div>
-                        </div>
-                    </a>    
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="job-card">
-                            <div class="style"></div>
-                            <h3 class="job-title">Graphic Designer</h3>
-                            <p class="job-category">Designer</p>
-                            <p class="job-location">Ahmedabad, Gujarat, India</p>
-                            <div class="job-skill">
-                                <span>Computer Skill</span>
-                                <span>6+</span>
-                            </div>
-                        </div>
-                    </a>    
-                </div>
-                <div class="col-md-4">
-                    <a href="#">
-                        <div class="job-card">
-                            <div class="style"></div>
-                            <h3 class="job-title">Soldador Mig MAG</h3>
-                            <p class="job-category">Education</p>
-                            <p class="job-location">Krasnodar, Krasnodar, Russia</p>
-                            <div class="job-skill">
-                                <span>Communication Skill</span>
-                                <span>1+</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <a href="#" class="btn btn-primary">Browse All</a>
+
+                        <!-- Button Box -->
+                        <!-- <div class="button-box" data-aos="fade-up" data-aos-duration="1500" data-aos-offset="0">
+                            <a class="allbtnview" href="about.html"><span>View More</span></a>
+                        </div> -->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!--Latest job search-->
+    <!--welcome end-->
 
 
-    <!-- PENDING -->
+    <!--announcement-->
+    <section class="announcement">
+        <div class="crposition">
+            <div class="auto-container">
+                <div class="logorotate" style="opacity: 20%;">
+                    <div class="logorotateinner">
+                        <img src="<?= base_url() ?>assets/images/Without.png" />
+                    </div>
+                </div>
+                <div class="subheding" data-aos="fade-down" data-aos-duration="1000">Updates</div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 announcement-leftmain">
+                        <div class="announcement-left" data-aos="fade-left" data-aos-duration="1500">
+                            <ul>
+                                <?php
+                                if (!empty($announcement)) {
+                                    foreach ($announcement as $index => $item) {
+                                        ?>
+                                        <li>
+                                            <a href="javascript:;" data-fancybox data-type="iframe"
+                                                data-src="<?= base_url() . $item['path'] ?>">
+                                                <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                                <span><?=$item['title']?> <span class="newtag">New</span> </span>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                ?>
 
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="image-column col-lg-6 col-md-6">
+                        <div class="inner-column">
+                            <div class="image-one" data-aos="fade-down" data-aos-duration="1000">
+                                <img src="./images/qu-1.jpg" />
+                            </div>
+                        </div>
+                    </div>-->
 
+                    <div class="image-column col-lg-6 col-md-6">
+                        <div class="inner-column">
+                            <div class="slider" data-aos="fade-down" data-aos-duration="1000">
+                                <div class="slide">
+                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
+                                </div>
+                                <div class="slide">
+                                    <img src="<?= base_url() . $update_img['img_path'] ?>" alt="Slide 1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-
+                    <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+                        <a href="#" class="allbtnview"><span>View All</span></a>
+                    </div> -->
+                </div>
+            </div>
+    </section>
+    <!--announcement-->
 
     <!--achievement-->
     <section class="achievement">
