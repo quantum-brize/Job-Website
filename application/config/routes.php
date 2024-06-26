@@ -38,5 +38,6 @@ $route['admin/about']                   = 'admin/Admin/about';
 $route['admin/flyers']                  = 'admin/Admin/flyers';
 $route['admin/jobs']                    = 'admin/Admin/jobs';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
+$route['admin/users']                   = 'admin/pages/view_users';
 
 

@@ -116,6 +116,14 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link"
+                    href="<?= base_url('/admin/users') ?>">
+                    <i class="fas fa-user"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+
            
 
             

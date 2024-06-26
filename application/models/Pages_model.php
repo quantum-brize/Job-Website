@@ -499,6 +499,20 @@ class Pages_model extends Admin_model
         };
     }
 
+    public function get_all_user()
+    {
+
+        $user = $this->db
+            ->select('*')
+            ->from('users')
+            ->where(['type' => 'user'])
+            ->get();
+
+        $user = $user->result_array();
+        // $this->prd($user);
+        return !empty($user) ? $user : [];
+    }
+
     public function get_a_user($email)
     {
 

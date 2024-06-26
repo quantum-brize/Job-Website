@@ -121,6 +121,18 @@ class Pages extends Admin
         $this->is_auth('admin/quality_single.php', $data);
     }
 
+    public function view_users(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['users_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['users'] = true;
+        $data['data_page']['users'] = $this->Pages_model->get_all_user();
+
+        $this->is_auth('admin/users.php', $data);
+    }
+
 
     public function save_user_message(){
         $data = $this->input->post();
