@@ -241,7 +241,7 @@ if (false) {
       transform: translateX(-50%);
       text-align: center;
       width: 60%;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
     }
 
     .from_wrapper {
@@ -264,41 +264,44 @@ if (false) {
       padding: 10px 25px; 
       margin-bottom: 0;
     }
+    /* ____________________________ */
 
 
-
-    /* popular job categories css */
-
+    /* COMMON CSS FOR BELOW SECTION HEADING */
         .heading-container {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        .heading-container::before,
-        .heading-container::after {
-            content: '';
-            flex: 1;
-            border-bottom: 4px solid lightblue;
-            margin: 0 60px;
-            opacity: 0.6;
-        }
-
-        .heading-container h2 {
-            font-size: 40px;
-            font-weight: 700;
-            margin-bottom: 30px;
+        
+        .heading-container .heading {
+            font-size: 37px;
+            font-weight: 500;
             white-space: nowrap;
         }
+        
+        .underline {
+            width: 12%;
+            margin-top: 5px;
+            margin-bottom: 30px;
+            height: 3px; 
+            background-color: #f5f5f5;
+        }
+        /* ____________________________ */
+
+
+    /* popular job categories css */
     .card {
         display: flex;
         justify-content: center;
         align-items: center;
-      border: none;
-      border-radius: 20px;
-      background-color: #eeeeee;
-      transition: transform 0.2s ease;
-      cursor: pointer;
+        border: none;
+        border-radius: 20px;
+        background-color: #eeeeee;
+        transition: transform 0.2s ease;
+        cursor: pointer;
         
     }
 
@@ -347,112 +350,120 @@ if (false) {
     }
 
     .user-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-top: 15px;
-    background-color: #61b7f1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    border-bottom: 7px solid #61b7f1;
-  }
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-top: 15px;
+        background-color: #61b7f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        border-bottom: 7px solid #61b7f1;
+    }
   
-  .inner-circle-big {
-    bottom: -15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-  
-  }
-  .inner-circle-small {
-    top: 10px;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-  }
+    .inner-circle-big {
+        bottom: -15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    
+    }
+    .inner-circle-small {
+        top: 10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+    /* ____________________________ */
 
 
-  /* latest job */
-  .latest-jobs {
-    background-color: #f8f9fa;
-    margin-bottom: 20px;
-}
+    /* latest job */
+    .latest-jobs {
+        background-color: #f8f9fa;
+        margin-bottom: 20px;
+    }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-top: 50px;
-}
+    .job-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 40px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
 
-.job-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 40px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
+    .style{
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
+        top: -8px;
+        left: -70px;
+        transform: rotate(60deg);
 
-.style{
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
-    top: -8px;
-    left: -70px;
-    transform: rotate(60deg);
+    }
 
-}
+    .job-icon img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
 
-.job-icon img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-}
+    .job-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
 
-.job-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
-}
+    .job-category, .job-location {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
 
-.job-category, .job-location {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 10px;
-}
+    .job-category i, .job-location i {
+        margin-right: 5px;
+        color: lightgrey;
+    }
 
-.job-skill {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
+    .job-skill {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
 
-.job-skill span {
-    background: #e9ecef;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    color: #1967d3;
-}
+    .job-skill span {
+        background: #e9ecef;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        color: #1967d3;
+    }
+
+    .save-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 13px;
+        color: #007bff;
+        cursor: pointer;
+    }
 
     .btn-primary {
         background-color: #007bff;
@@ -470,6 +481,62 @@ if (false) {
         background-color: #419bfa;
         color: #fff;
         }
+    /* ____________________________ */
+
+
+    /* responsiveness for mobile device */
+    @media (max-width: 385px) {
+
+        /* banner section */
+        .banner_main {
+            margin-top: 300px;  /* adjust this property after banner images shown*/
+            padding: 10px;
+        }
+
+        .carousel-inner img {
+            height: auto;
+        }
+
+        .carousel_captions{
+            margin-top: -50px;
+        }
+
+        .carousel_captions h1 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .carousel_captions .p1,
+        .carousel_captions .p2 {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .search-area {
+            width: 60%;
+            margin-bottom: -70px;
+        }
+
+        .search-area .form-control {
+            width: 170px;
+            height: 20px; 
+            padding: 12px;
+            font-size: 13px; 
+        }
+
+        .search-area .btn-primary {
+            font-size: 13px;
+            height: 25.6px;
+            padding: 0 6px; 
+        }
+
+        /* popular job categories */
+        .job_categories .heading{
+            margin-top: 50px;
+            font-size: 32px;
+        }
+    }
+
+
 
   </style>
 </head>
@@ -687,21 +754,21 @@ if (false) {
             <form action="#">
                 <div class="from_wrapper">
                     <div class="form-group mb-0">
-                    <input type="text" class="form-control" placeholder="Search for jobs...">
+                        <input type="text" class="form-control" placeholder="Search for jobs...">
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary sm_screen_btn">Search</button>
                 </div>
             </form>
         </div>
     </section>
 
     <!--Job categories start-->
-    <section class="welcome_main" id="aboutus">
+    <section class="welcome_main job_categories" id="aboutus">
         <div class="container mt-5">
             <div class="row">
             <div class="col-12 text-center mb-4 heading-container">
-                <!-- <h2 class="cat_title">Job Categories</h2> -->
-                <h2>Popular Job Categories</h2>
+                <h2 class="heading">Popular Job Categories</h2>
+                <span class="underline"></span>
             </div>
             </div>
             <div class="row">
@@ -791,7 +858,8 @@ if (false) {
         <div class="container">
             <div class="row mb-4">
                 <div class="heading-container col text-center">
-                    <h2 class="section-title">Latest Jobs</h2>
+                    <h2 class="heading">Latest Jobs</h2>
+                    <span class="underline"></span>
                 </div>
             </div>
             <div class="row">
@@ -799,9 +867,12 @@ if (false) {
                     <a href="#">
                         <div class="job-card">
                             <div class="style"></div>
+                            <div class="save-icon">
+                                <i class="far fa-bookmark"></i>
+                            </div>
                             <h3 class="job-title">Grafic designer</h3>
-                            <p class="job-category">Accountants</p>
-                            <p class="job-location">Karabuk, Karabuk, Turkey</p>
+                            <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Karabuk, Karabuk, Turkey</p>
                             <div class="job-skill">
                                 <span>Computer Skill</span>
                                 <span>4+</span>
@@ -813,9 +884,12 @@ if (false) {
                     <a href="#">
                         <div class="job-card">
                             <div class="style"></div>
+                            <div class="save-icon">
+                                <i class="far fa-bookmark"></i>
+                            </div>
                             <h3 class="job-title">Graphic Designer</h3>
-                            <p class="job-category">Designer</p>
-                            <p class="job-location">Ahmedabad, Gujarat, India</p>
+                            <p class="job-category"><i class="fas fa-briefcase"></i> Designer</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Ahmedabad, Gujarat, India</p>
                             <div class="job-skill">
                                 <span>Computer Skill</span>
                                 <span>6+</span>
@@ -827,9 +901,12 @@ if (false) {
                     <a href="#">
                         <div class="job-card">
                             <div class="style"></div>
+                            <div class="save-icon">
+                                <i class="far fa-bookmark"></i>
+                            </div>
                             <h3 class="job-title">Soldador Mig MAG</h3>
-                            <p class="job-category">Education</p>
-                            <p class="job-location">Krasnodar, Krasnodar, Russia</p>
+                            <p class="job-category"><i class="fas fa-briefcase"></i> Education</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Krasnodar, Krasnodar, Russia</p>
                             <div class="job-skill">
                                 <span>Communication Skill</span>
                                 <span>1+</span>
@@ -846,12 +923,6 @@ if (false) {
         </div>
     </section>
     <!--Latest job search-->
-
-
-    <!-- PENDING -->
-
-
-
 
 
     <!--achievement-->
@@ -942,7 +1013,7 @@ if (false) {
     </section>
     <!--Appreciation-->
 
-    <!--contactus-->
+    <!--contact us-->
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.9/css/intlTelInput.css" rel="stylesheet"
         media="screen">
