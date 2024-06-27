@@ -157,158 +157,6 @@
         }
     </style>
 
-    <style> 
-
-        /* left side search area */
-
-        .from_wrapper{
-            display: flex;
-            width: 100%;
-            height: 30px;
-            justify-content: left;
-            align-items: center;
-            
-        }
-        .search-area .form-control {
-            width: 215px;
-            height: 30px; 
-            padding: 12px;
-            font-size: 13px;
-            margin: 0 8px 7px 8px ;
-        }
-
-        .search-area .btn {
-            font-size: 12px;
-            height: 30px;
-            border-radius: 8px;
-            margin-bottom: 14px;
-            padding: 0 7px;
-            background-color: #fff; 
-            color: #007bff;
-            cursor: pointer;
-        }
-        
-        /* latest job */
-        .latest-jobs {
-            background-color: #f8f9fa;
-            margin-bottom: 20px;
-        }
-
-    .job-card {
-        background: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 20px;
-        margin-bottom: 40px;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .style{
-        position: absolute;
-        height: 600px;
-        width: 600px;
-        background: linear-gradient(45deg, rgba(254, 144, 144, 0.5), transparent);
-        top: -25px;
-        right: -180px;
-        transform: rotate(60deg);
-
-    }
-
-    .job-icon img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 15px;
-    }
-
-    .job-title {
-        z-index: 1;
-        font-size: 1.5rem;
-        text-align: left;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .job-category, .job-location {
-        z-index: 1;
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 10px;
-    }
-
-    .job-category i, .job-location i {
-        margin-right: 5px;
-        color: lightgrey;
-        z-index: 1;
-    }
-
-    .job-skill {
-        z-index: 1;
-        display: flex;
-        justify-content: left;
-        gap: 10px;
-        margin-bottom: 8px;
-    }
-
-    .job-skill span {
-        z-index: 1;
-        background: #e9ecef;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        color: #1967d3;
-    }
-
-    .save-icon {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 13px;
-        color: #007bff;
-        cursor: pointer;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        color: #fff;
-        border-color: #007bff;
-        padding: 9px 12px;
-        font-size: 16px;
-        border-radius: 20px;
-        transition: background-color 0.3s ease;
-        margin-top: 8px;
-
-    }
-
-        .btn-browse-all:hover {
-            background-color: #419bfa;
-            color: #fff;
-        }
-
-        /* responsiveness */  
-    @media (max-width: 385px) {
-        /* job cards */
-        .style{
-            z-index: -1;
-        }
-        .btn-primary {
-            margin-right: 0px;
-            margin-top: 8px;
-        }
-
-        .headingh1{
-            margin-top: 30px;
-        }
-
-        /* left side search */
-        .search-area .btn-primary {
-            margin-bottom: 14px;
-        }
-    }
-    </style>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
@@ -367,15 +215,16 @@
                             <ul>
                                 <li><a href="<?= base_url('home') ?>">Home</a></li>
                                 <li data-tab="aboutmenu"><a href="<?= base_url('about') ?>">About Us</a></li>
-                                <!-- <li data-tab="academicsmenu">
+                                <li data-tab="academicsmenu">
                                     <a href="javascript:;">
                                         Products<span><i class="fa fa-angle-right"></i></span>
                                     </a>
-                                </li> -->
+                                </li>
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
-                                <!-- <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li> -->
-                                <li data-tab="beyondclassroom"><a href="<?= base_url('job') ?>">Jobs</a></li>
-                                <!-- <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('career') ?>">Careers</a></li>
+                                <li data-tab="admissionmenu"><a
+                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>
@@ -572,18 +421,13 @@
                 <div class="col-lg-3">
                     <div class="lefttopfixed">
                         <div class="allpagesview-left" data-aos="fade-up" data-aos-duration="1000">
-                            <div class="left_subheading">Jobs</div>
-
-                            <div class="search-area">
-                                <form action="#">
-                                    <div class="from_wrapper">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Search for jobs...">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary sm_screen_btn">Search</button>
-                                    </div>
-                                </form>
-                            </div>
+                            <div class="left_subheading">Contact Us</div>
+                            <!-- <div class="leftmenupartbox">
+                                <ul>
+                                    <li><a href="/getintouch">Get In touch</a></li>
+                                    <li><a href="/workwithus">Work with us</a></li>
+                                </ul>
+                            </div> -->
                         </div>
                         <style>
                             .newleftsidecss ul li a {
@@ -641,42 +485,28 @@
                                 margin-bottom: 20px;
                             }
                         </style>
-                        <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000">Jobs</h1>
+                        <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000">carrers</h1>
                         <div class="contactus-right">
                             <div class="container mt-4">
                                 <div class="row">
-                                <div class="col-md-12">
-
-                                    <a href="#">
-                                        <div class="job-card">
-                                            <div class="style"></div>
-                                            <h3 class="job-title">Job title</h3>
-                                            <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
-                                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Karabuk, Karabuk, Turkey</p>
-                                            <div class="job-skill">
-                                                <span>Computer Skill</span>
-                                                <span>4+</span>
+                                    <?php
+                                    if (!empty($jobs)) {
+                                        foreach ($jobs as $index => $item) {
+                                            ?>
+                                            <div class="col-md-12" data-aos="fade-up" data-aos-duration="1000">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h2 class="card-title"><?= $item['title'] ?></h2>
+                                                        <p class="card-text "><?= $item['details'] ?></p>
+                                                        <a href="<?= base_url('career/apply?uid=').$item['uid'] ?>" class="btn btn-lg btn-primary">Apply Now</a>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <a href="#" class="btn btn-lg btn-primary">Apply Now</a>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-12">
+                                            <?php
+                                        }
+                                    }
+                                    ?>
 
-                                    <a href="#">
-                                        <div class="job-card">
-                                            <div class="style"></div>
-                                            <h3 class="job-title">Job title</h3>
-                                            <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
-                                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Karabuk, Karabuk, Turkey</p>
-                                            <div class="job-skill">
-                                                <span>Computer Skill</span>
-                                                <span>4+</span>
-                                            </div>
-                                            <a href="#" class="btn btn-lg btn-primary">Apply Now</a>
-                                        </div>
-                                    </a>
-                                </div>
 
                                 </div>
                             </div>

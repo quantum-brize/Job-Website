@@ -238,16 +238,15 @@ if (false) {
                             <ul>
                                 <li><a href="<?= base_url('home') ?>">Home</a></li>
                                 <li data-tab="aboutmenu"><a href="<?= base_url('about') ?>">About Us</a></li>
-                                <li data-tab="academicsmenu">
+                                <!-- <li data-tab="academicsmenu">
                                     <a href="javascript:;">
                                         Products<span><i class="fa fa-angle-right"></i></span>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li>
-                                <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li>
-                                <li data-tab="beyondclassroom"><a href="<?= base_url('career') ?>">Careers</a></li>
-                                <li data-tab="admissionmenu"><a
-                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
+                                <!-- <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li> -->
+                                <li data-tab="beyondclassroom"><a href="<?= base_url('job') ?>">Jobs</a></li>
+                                <!-- <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                             </ul>
                         </div>

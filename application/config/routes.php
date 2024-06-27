@@ -10,7 +10,7 @@ $route['translate_uri_dashes']  = FALSE;
 // ============================ web routes
 $route['home']                          = 'web/load';
 $route['contact-us']                    = 'web/load/contact_us';
-$route['career']                        = 'web/load/career';
+$route['job']                        = 'web/load/career';
 $route['career/apply']                  = 'web/load/career_apply';
 $route['about']                         = 'web/load/about';
 $route['product']                       = 'web/load/product';
