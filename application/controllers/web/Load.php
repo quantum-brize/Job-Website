@@ -188,11 +188,19 @@ class Load extends Common
 
 	}
 
-
-
-
-
-
-
+    public function job_details()
+	{
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;   
+        $data['data_header']['about'] = true;
+        $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $data['data_page']['about_img'] = $this->Pages_model->get_all_about_img();
+        $data['data_page']['about_banner'] = $this->Pages_model->get_about_banners();
+        $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
+        $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        $this->load_page('web/job_details.php', $data);
+    }
 }
 ?>
