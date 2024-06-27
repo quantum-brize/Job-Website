@@ -448,53 +448,85 @@
                                 <!-- <h3>London</h3>
                                 <p>London is the capital city of England.</p> -->
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-12">
                                         <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
+                                        <label class="form-label">Email*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
+                                        <label class="form-label">Image*</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Phone*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Date of Birth*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
+                                        <label class="form-label">Gender*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
+                                        <label class="form-label">Language*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
+                                        <label class="form-label">Skills*</label>
                                         <input type="text" class="form-control">
                                     </div>
                                     <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
+                                        <label class="form-label">Marital Status*</label>
                                         <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Aadhar*</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Pan*</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">State*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">City*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Experience</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Social Media Links</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Resume*</label>
+                                        <input type="file" class="form-control">
                                     </div>
                                 </div>
                             </div>
