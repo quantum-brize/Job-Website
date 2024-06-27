@@ -377,6 +377,7 @@
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('job') ?>">Jobs</a></li>
                                 <!-- <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
+                                <li data-tab=""><a href="<?= base_url('account') ?>">Account </a></li>
                             </ul>
                         </div>
 

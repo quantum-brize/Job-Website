@@ -177,6 +177,123 @@
         crossorigin="anonymous"></script>
     <!-- datepicker -->
     <script src="https://cdn.wizemen.net/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+    <style>
+        
+        /* top section */
+        .allpagesview-right{
+            margin-top: 110px;
+            padding-bottom: 0px;
+        }
+
+        .top-section {
+            background-color: #e7f2fc;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 65px;
+            left: 115px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .job-title {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        .card_content{
+            margin-left: 130px;
+        }
+
+        .job-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 5px;
+        }
+
+        .detail-item {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .detail-item i {
+            margin-right: 5px;
+        }
+
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            padding: 9px 12px;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+            margin-top: 30px;
+
+        }
+
+        .btn-browse-all:hover {
+            background-color: #419bfa;
+            color: #fff;
+        }
+
+        .job_wrapper{
+            padding: 0px;
+        }
+
+        .job_container{
+            padding: 0px;
+        }
+        /* _____________ */
+    @media (max-width: 385px) {
+
+        /* top section */
+        .card_content{
+            margin-top: 80px;
+        }
+
+        .btn-primary {
+            padding: 7px 10px;
+            font-size: 14px;
+            border-radius: 17px;
+            margin-top: 30px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            top: 80px;
+            left: 90px;
+        }
+        .card_content{
+            margin-left: 20px;
+        }
+        .allpagesview-right{
+            margin-top: 0px;
+            padding-bottom: 0px;
+        }
+    }
+
+    </style>
 </head>
 
 <body id="topview">
@@ -353,7 +470,7 @@
 
     <!--overview section-->
     <div class="allpagesview">
-        <div class="auto-container">
+        <div class="container-fluid job_container">
             <div class="row">
                 <div class="col-lg-3">
                     <div class="lefttopfixed">
@@ -431,93 +548,28 @@
                             border-top: none;
                             }
                         </style>
-                        
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12 job_wrapper">
                     <div class="allpagesview-right">
-                            <!-- Tab links -->
-                            <div class="tab">
-                                <button class="tablinks active" onclick="openCity(event, 'London')">London</button>
-                                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-                            </div>
+                            
+                        <div class="row align-items-center top-section">
+                                <div class="col-auto">
+                                    <div class="logo">
+                                        <span class="logo-text">JOB</span>
+                                    </div>
+                                </div>
+                            <div class="card_content">
 
-                            <!-- Tab content -->
-                            <div id="London" class="tabcontent active">
-                                <!-- <h3>London</h3>
-                                <p>London is the capital city of England.</p> -->
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
+                                <div class="col">
+                                    <div class="job-title">Job title</div>
+                                    <div class="job-details">
+                                        <span class="detail-item"><i class="fas fa-clock"></i> 10 months ago</span>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
-                                    </div>
+                                    <a href="#" class="btn btn-lg btn-primary">Apply for job</a>
                                 </div>
                             </div>
-
-                            <div id="Paris" class="tabcontent">
-                                <h3>Paris</h3>
-                                <p>Paris is the capital of France.</p>
-                            </div>
-
-                            <div id="Tokyo" class="tabcontent">
-                                <h3>Tokyo</h3>
-                                <p>Tokyo is the capital of Japan.</p>
-                            </div>
-                        <!-- <div class="row cards-in">
-                            <div class="col-md-12">
-                                <div class="card-custom">
-                                    <img src="<?= base_url() ?>assets/images/about_icons/icon1.png" alt="About Us">
-                                    <h5>About Us</h5>
-                                    <p><?= $about_text['about_text'] ?></p>
-                                </div>
-                            </div>
-                        </div> -->
-
+                        </div>
                     </div>
                 </div>
             </div>
