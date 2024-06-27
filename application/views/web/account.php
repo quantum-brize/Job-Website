@@ -357,7 +357,6 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="lefttopfixed">
-
                         <style>
                             .card-custom {
                                 border: 1px solid #2596be;
@@ -395,25 +394,129 @@
                                 font-size: 0.95rem;
                                 color: #666;
                             }
+
+                            /* Style the tab */
+                            .tab {
+                            overflow: hidden;
+                            border: 1px solid #ccc;
+                            background-color: #f1f1f1;
+                            }
+
+                            /* Style the buttons that are used to open the tab content */
+                            .tab button {
+                            background-color: inherit;
+                            float: left;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            padding: 14px 16px;
+                            transition: 0.3s;
+                            }
+
+                            /* Change background color of buttons on hover */
+                            .tab button:hover {
+                            background-color: #ddd;
+                            }
+
+                            /* Create an active/current tablink class */
+                            .tab button.active {
+                            background-color: #ccc;
+                            }
+
+                            /* Style the tab content */
+                            .tabcontent {
+                            display: none;
+                            padding: 6px 12px;
+                            border: 1px solid #ccc;
+                            border-top: none;
+                            }
                         </style>
                         
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-12">
                     <div class="allpagesview-right">
+                            <!-- Tab links -->
+                            <div class="tab">
+                                <button class="tablinks active" onclick="openCity(event, 'London')">London</button>
+                                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                            </div>
 
+                            <!-- Tab content -->
+                            <div id="London" class="tabcontent active">
+                                <!-- <h3>London</h3>
+                                <p>London is the capital city of England.</p> -->
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Name*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Email*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Name*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Email*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Name*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Email*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Name*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Email*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Name*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-label">Email*</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
 
-                        <div class="row cards-in">
+                            <div id="Paris" class="tabcontent">
+                                <h3>Paris</h3>
+                                <p>Paris is the capital of France.</p>
+                            </div>
 
+                            <div id="Tokyo" class="tabcontent">
+                                <h3>Tokyo</h3>
+                                <p>Tokyo is the capital of Japan.</p>
+                            </div>
+                        <!-- <div class="row cards-in">
                             <div class="col-md-12">
                                 <div class="card-custom">
                                     <img src="<?= base_url() ?>assets/images/about_icons/icon1.png" alt="About Us">
                                     <h5>About Us</h5>
                                     <p><?= $about_text['about_text'] ?></p>
                                 </div>
-                                
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
@@ -2192,6 +2295,27 @@
         function activateGetInTouch() {
             $("#ddlschooltourrequired").val("No").change();
             window.location.href = "#contactus";
+        }
+
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
         }
     </script>
 </body>
