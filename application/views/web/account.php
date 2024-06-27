@@ -438,25 +438,25 @@
                     <div class="allpagesview-right">
                             <!-- Tab links -->
                             <div class="tab">
-                                <button class="tablinks active" onclick="openCity(event, 'London')">London</button>
+                                <button class="tablinks active" onclick="openCity(event, 'user_info')">User Info</button>
                                 <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
                                 <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
                             </div>
 
                             <!-- Tab content -->
-                            <div id="London" class="tabcontent active">
+                            <div id="user_info" class="tabcontent active">
                                 <!-- <h3>London</h3>
                                 <p>London is the capital city of England.</p> -->
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['user_name'] ?>">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Email*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="email" class="form-control" value="<?= $user['email'] ?>">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Image*</label>
@@ -466,31 +466,46 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Phone*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="number" class="form-control" value="<?= $user['phone'] ?>">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Date of Birth*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Gender*</label>
-                                        <input type="text" class="form-control">
+                                        <div class="gender-group">
+                                            <label class="gender-option">
+                                                <input type="radio" name="gender" value="male" required> Male
+                                            </label>
+                                            <label class="gender-option">
+                                                <input type="radio" name="gender" value="female"> Female
+                                            </label>
+                                            <label class="gender-option">
+                                                <input type="radio" name="gender" value="other"> Other
+                                            </label>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Language*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['language'] ?>">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Skills*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['skills'] ?>">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Marital Status*</label>
-                                        <input type="text" class="form-control">
+                                        <select class="form-control" name="" id="merital_status">
+                                            <option value="">Select</option>
+                                            <option value="married">Married</option>
+                                            <option value="unmarried">Unmarried</option>
+                                            <option value="devorded">Devorced</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -506,21 +521,21 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">State*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['state'] ?>">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">City*</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['city'] ?>">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <label class="form-label">Experience</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['experience'] ?>">
                                     </div>
                                     <div class="col-lg-6">
                                         <label class="form-label">Social Media Links</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" value="<?= $user['social_media_links'] ?>">
                                     </div>
                                 </div>
                                 <div class="row">

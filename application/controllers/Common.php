@@ -183,7 +183,7 @@ class Common extends CI_Controller
 			];
 		} else{
 			$this->init_model(MODEL_PAGES);
-			$is_user_exist = $this->Pages_model->get_a_user($this->input->post('email'));
+			$is_user_exist = $this->Pages_model->is_user_exist($this->input->post('email'));
 			if(empty($is_user_exist)){
 				$is_signup_success = $this->Pages_model->add_signup_data($this->input->post());
 				if($is_signup_success){

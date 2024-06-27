@@ -501,19 +501,31 @@ class Pages_model extends Admin_model
 
     public function get_all_user()
     {
-
         $user = $this->db
-            ->select('*')
+            ->select('users.uid as user_id, users.user_name, users.email, users.phone, user_details.*') // Select fields from both tables
             ->from('users')
-            ->where(['type' => 'user'])
+            ->join('user_details', 'users.uid = user_details.user_id', 'left') // Join with categories table
+            ->where(['users.type' => 'user'])
             ->get();
-
         $user = $user->result_array();
-        // $this->prd($user);
         return !empty($user) ? $user : [];
     }
 
-    public function get_a_user($email)
+    public function get_a_user($user_id)
+    {
+        $user = $this->db
+            ->select('users.uid as user_id, users.user_name, users.email, users.phone, user_details.*') // Select fields from both tables
+            ->from('users')
+            ->join('user_details', 'users.uid = user_details.user_id', 'left') // Join with categories table
+            ->where(['users.type' => 'user'])
+            ->where(['users.uid' => $user_id])
+            ->get();
+        $user = $user->result_array();
+        return !empty($user) ? $user[0] : [];
+    }
+
+
+    public function is_user_exist($email)
     {
 
         $user = $this->db
@@ -537,8 +549,32 @@ class Pages_model extends Admin_model
             'type' =>  'user',
         ];
         $add_data = $this->db->insert('users', $insert_data);
+
         if($add_data){
-            return true;
+            $insert_user_details_data = [
+                'uid' => $this->generate_uid('USRDTL'),
+                'user_id' =>  $insert_data['uid'],
+                'img' =>  "",
+                'dob' =>  "",
+                'gender' =>  "",
+                'language' =>  "",
+                'skills' =>  "",
+                'marital_status' =>  "",
+                'aadhar' =>  "",
+                'pan' =>  "",
+                'state' =>  "",
+                'city' =>  "",
+                'experience' =>  "",
+                'social_media_links' =>  "",
+                'resume' =>  "",
+                'status' =>  'pending',
+            ];
+            $add_user_details_data = $this->db->insert('user_details', $insert_user_details_data);
+            if($add_user_details_data){
+                return true;
+            }else{
+                false;
+            }
         }else{
             false;
         };
