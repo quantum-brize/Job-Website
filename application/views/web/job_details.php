@@ -58,11 +58,11 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css?v=15">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/responsive.css?v=13" />
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/style.css?v=15">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/responsive.css?v=13" />
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/all.css" />
     <link rel="stylesheet" href="https://cdn.wizemen.net/fontawesome5-15-3/css/v4-shims.css" />
     <link rel="stylesheet" type="text/css"
@@ -179,11 +179,10 @@
     <script src="https://cdn.wizemen.net/plugins/datepicker/bootstrap-datepicker.js"></script>
 
     <style>
-        
-        /* top section */
-        .allpagesview-right{
+
+        /* top card section */
+        .job_details_page_right{
             margin-top: 110px;
-            padding-bottom: 0px;
         }
 
         .top-section {
@@ -264,6 +263,144 @@
             padding: 0px;
         }
         /* _____________ */
+
+
+        /* Middle section */
+        .middle_section{
+            margin: 60px 0px;
+        }
+        .job-description {
+        padding: 20px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        }
+
+        .job-description ul {
+        list-style-type: none;
+        padding-left: 0;
+        }
+
+        .job-description ul li {
+        padding-left: 0;
+        }
+
+        .job-overview {
+        background-color: #f8f9fa;
+        border: 1px solid #e1e4e8;
+        border-radius: 4px;
+        }
+
+        .job-overview h4 {
+        margin-top: 0;
+        }
+
+        .job-overview ul {
+        list-style-type: none;
+        padding-left: 0;
+        }
+
+        .job-overview ul li {
+        padding: 5px 0;
+        }
+        /* _____________ */
+
+        /* related jobs */
+        .related-jobs {
+            background-color: #f8f9fa;
+        }
+        .related-jobs .heading{
+            margin-top: 20px;
+        }
+    .job-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 40px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .style{
+        position: absolute;
+        height: 200px;
+        width: 200px;
+        background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
+        top: -8px;
+        left: -70px;
+        transform: rotate(60deg);
+
+    }
+
+    .job-icon img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .job-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .job-category, .job-location {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .job-category i, .job-location i {
+        margin-right: 5px;
+        color: lightgrey;
+    }
+
+    .job-skill {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .job-skill span {
+        background: #e9ecef;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        color: #1967d3;
+    }
+
+    .save-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 13px;
+        color: #007bff;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+        padding: 0.75rem 2rem;
+        font-size: 1.25rem;
+        border-radius: 30px;
+        transition: background-color 0.3s ease;
+        margin-bottom: 50px;
+
+    }
+
+    .btn-browse-all:hover {
+        background-color: #419bfa;
+        color: #fff;
+        }
+    /* ____________________________ */
+
+
+    /* Responsiveness */
     @media (max-width: 385px) {
 
         /* top section */
@@ -287,9 +424,17 @@
         .card_content{
             margin-left: 20px;
         }
-        .allpagesview-right{
+        .job_details_page_right{
             margin-top: 0px;
             padding-bottom: 0px;
+        }
+
+        /* Middle section */
+        .list-unstyled{
+            font-size: 12px;
+        }
+        .job_details_page ul li {
+            text-align: left;
         }
     }
 
@@ -300,13 +445,13 @@
     <div class="fixbuttoninapplynowmain" data-aos="zoom-in" data-aos-duration="3000">
         <div class="fixbuttoninapplynow applynowsticky">
             <div class="textrotateviewapplynow">
-                <a href="<?= $action_buttons['btn_link_1'] ?>" target="_blank"><?= $action_buttons['btn_title_1'] ?></a>
+                <a href="<?=$action_buttons['btn_link_1']?>" target="_blank"><?=$action_buttons['btn_title_1']?></a>
             </div>
         </div>
 
         <div class="fixbuttoninapplynow bookatour">
             <div class="textrotateviewapplynow">
-                <a href="<?= $action_buttons['btn_link_2'] ?>" target="_blank"><?= $action_buttons['btn_title_2'] ?></a>
+                <a href="<?=$action_buttons['btn_link_2']?>" target="_blank"><?=$action_buttons['btn_title_2']?></a>
             </div>
         </div>
     </div>
@@ -325,10 +470,10 @@
                     <span></span>
                 </div>
             </div>
-            <a href="<?= base_url('contact-us') ?>" onclick="activateGetInTouch();">
+            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Contact</p>
-                    <img src="<?= base_url() ?>assets/images/mail.png" alt="#">
+                    <img src="<?=base_url()?>assets/images/mail.png" alt="#">
                 </div>
             </a>
         </div>
@@ -338,20 +483,20 @@
                     <div class="intSchMenu__menusWrapper">
                         <div class="first-level-navigation">
                             <ul>
-                                <li><a href="<?= base_url('home') ?>">Home</a></li>
-                                <li data-tab="aboutmenu"><a href="<?= base_url('about') ?>">About Us</a></li>
+                                <li><a href="<?=base_url('home')?>">Home</a></li>
+                                <li data-tab="aboutmenu"><a href="<?=base_url('about')?>">About Us</a></li>
                                 <!-- <li data-tab="academicsmenu">
                                     <a href="javascript:;">
                                         Products<span><i class="fa fa-angle-right"></i></span>
                                     </a>
                                 </li> -->
-                                <!-- <li data-tab="beyondclassroom"><a href="<?= base_url('updates') ?>">Updates</a></li> -->
-                                <!-- <li data-tab="beyondclassroom"><a href="<?= base_url('quality') ?>">Quality</a></li> -->
-                                <li data-tab="beyondclassroom"><a href="<?= base_url('career') ?>">Jobs</a></li>
+                                <!-- <li data-tab="beyondclassroom"><a href="<?=base_url('updates')?>">Updates</a></li> -->
+                                <!-- <li data-tab="beyondclassroom"><a href="<?=base_url('quality')?>">Quality</a></li> -->
+                                <li data-tab="beyondclassroom"><a href="<?=base_url('career')?>">Jobs</a></li>
                                 <!-- <li data-tab="admissionmenu"><a
-                                        href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
-                                <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
-                                <li data-tab=""><a href="<?= base_url('account') ?>">Account </a></li>
+                                        href="<?=base_url('infrastructure')?>">Infrastructure</a></li> -->
+                                <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
+                                <li data-tab=""><a href="<?=base_url('account')?>">Account </a></li>
                             </ul>
                         </div>
 
@@ -361,17 +506,17 @@
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
                                     <?php
-                                    if ($products) {
-                                        foreach ($products as $index => $item) {
-                                            ?>
+if ($products) {
+    foreach ($products as $index => $item) {
+        ?>
                                             <li>
                                                 <a
-                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                    href="<?=base_url('product?p_id=') . $item['uid']?>"><?=$item['name']?></a>
                                             </li>
                                             <?php
-                                        }
-                                    }
-                                    ?>
+}
+}
+?>
                                 </ul>
                             </div>
 
@@ -394,33 +539,33 @@
 
 
                         <ul class="navmobile">
-                            <li class="nav__item"><a href="<?= base_url('home') ?>" class="nav__link">Home</a></li>
-                            <li class="nav__item"><a class="nav__link" href="<?= base_url('about') ?>">About Us</a></li>
+                            <li class="nav__item"><a href="<?=base_url('home')?>" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a class="nav__link" href="<?=base_url('about')?>">About Us</a></li>
                             <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">
                                     <?php
-                                    if ($products) {
-                                        foreach ($products as $index => $item) {
-                                            ?>
+if ($products) {
+    foreach ($products as $index => $item) {
+        ?>
                                             <li>
                                                 <a
-                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
+                                                    href="<?=base_url('product?p_id=') . $item['uid']?>"><?=$item['name']?></a>
                                             </li>
                                             <?php
-                                        }
-                                    }
-                                    ?>
+}
+}
+?>
                                 </ul>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
+                            <li class="nav__item"><a href="<?=base_url('updates')?>" class="nav__link">Updates</a>
                             </li>
-                            <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
+                            <li class="nav__item"><a href="<?=base_url('infrastructure')?>"
                                     class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li>
-                            <li class="nav__item"><a href="<?= base_url('career') ?>">Careers</a></li>
+                            <li class="nav__item"><a href="<?=base_url('quality')?>" class="nav__link">quality</a></li>
+                            <li class="nav__item"><a href="<?=base_url('career')?>">Careers</a></li>
 
-                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
+                            <li class="nav__item"><a href="<?=base_url('contact-us')?>" class="nav__link">Contact
                                     us</a></li>
                         </ul>
 
@@ -428,22 +573,22 @@
 
                     <div class="intSchMenu__extraContent">
                         <div class="menulogo">
-                            <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
+                            <a href="/"><img src="<?=base_url()?>assets/images/logo.png" alt="#" /></a>
                         </div>
                         <div class="rightsideonmenuview">
                             <div class="latestnewsview">
                                 <?php if (!empty($flyers)) {
-                                    foreach ($flyers as $index => $item) {
-                                        ?>
+    foreach ($flyers as $index => $item) {
+        ?>
                                         <div class="samecolor">
                                             <div class="lower-content">
                                                 <div class="newsname">
                                                     <i class="fa fa-newspaper-o"></i>
                                                 </div>
                                                 <div class="newsinnertext">
-                                                    <img src="<?= base_url() . $item['img_path'] ?>" alt="#" />
+                                                    <img src="<?=base_url() . $item['img_path']?>" alt="#" />
                                                     <div class="hovertext">
-                                                        <a href="<?= base_url() . $item['img_path'] ?>">
+                                                        <a href="<?=base_url() . $item['img_path']?>">
                                                             <div class="newsmoreview">
                                                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                                                             </div>
@@ -453,8 +598,8 @@
                                             </div>
                                         </div>
                                         <?php
-                                    }
-                                } ?>
+}
+}?>
                             </div>
                         </div>
                     </div>
@@ -466,10 +611,10 @@
 
 
 
-   
+
 
     <!--overview section-->
-    <div class="allpagesview">
+    <div class="allpagesview job_details_page">
         <div class="container-fluid job_container">
             <div class="row">
                 <div class="col-lg-3">
@@ -551,8 +696,9 @@
                     </div>
                 </div>
                 <div class="col-lg-12 job_wrapper">
-                    <div class="allpagesview-right">
-                            
+                    <div class="allpagesview-right job_details_page_right">
+
+                            <!-- Top card section -->
                         <div class="row align-items-center top-section">
                                 <div class="col-auto">
                                     <div class="logo">
@@ -567,6 +713,74 @@
                                         <span class="detail-item"><i class="fas fa-clock"></i> 10 months ago</span>
                                     </div>
                                     <a href="#" class="btn btn-lg btn-primary">Apply for job</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Middle section -->
+                        <div class="container">
+                            <div class="row middle_section">
+                                <div class="col-md-8">
+                                    <div class="job-description">
+                                        <h4>Job Description</h4>
+                                        <p>Job description text here.</p>
+                                        <h4>Key Responsibilities</h4>
+                                        <p>N/A</p>
+                                        <h4>Skill & Experience</h4>
+                                        <ul>
+                                            <li>Communication Skill</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="job-overview p-3">
+                                        <h4>Job Overview</h4>
+                                        <ul class="list-unstyled">
+                                            <li><i class="far fa-calendar-alt"></i> Date Posted: <span>23rd Aug, 2023</span></li>
+                                            <li><i class="far fa-calendar-alt"></i> Expiration date: <span>29th Nov, 2028</span></li>
+                                            <li><i class="fas fa-map-marker-alt"></i> Location: <span>Krasnodar , Krasnodar, Russia</span></li>
+                                            <li><i class="fas fa-briefcase"></i> Job Type: <span>Business and Financial Operations</span></li>
+                                            <li><i class="fas fa-sitemap"></i> Functional Areas: <span>Administrative/Management</span></li>
+                                            <li><i class="fas fa-users"></i> Positions: <span>1</span></li>
+                                            <li><i class="fas fa-briefcase"></i> Job Experience: <span>1 Year</span></li>
+                                            <li><i class="fas fa-calendar"></i> Salary Period: <span>Monthly Pay Period</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- related job section -->
+                        <div class="related-jobs">
+                            <div class="container">
+                                <div class="row mb-4">
+                                    <div class="heading-container col text-center">
+                                        <h2 class="heading">Related Jobs</h2>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <a href="#">
+                                            <div class="job-card">
+                                                <div class="style"></div>
+                                                <div class="save-icon">
+                                                    <i class="far fa-bookmark"></i>
+                                                </div>
+                                                <h3 class="job-title">Grafic designer</h3>
+                                                <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
+                                                <p class="job-location"><i class="fas fa-map-marker-alt"></i>Karabuk, Karabuk, Turkey</p>
+                                                <div class="job-skill">
+                                                    <span>Computer Skill</span>
+                                                    <span>4+</span>
+                                                </div>
+                                            </div>
+                                        </a>    
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col text-center">
+                                        <a href="#" class="btn btn-primary">Show all</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -586,19 +800,19 @@
             <div class="row footer_top">
                 <div class="col-lg-4 col-sm-12" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="footerlogo">
-                        <a href="/"><img src="<?= base_url() ?>assets/images/logo.png" alt="#" /></a>
+                        <a href="/"><img src="<?=base_url()?>assets/images/logo.png" alt="#" /></a>
                     </div>
-                    <p><?= $about_text['about_text'] ?></p>
+                    <p><?=$about_text['about_text']?></p>
                 </div>
                 <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
                     <div class="quicklinks">
                         <div class="footerheading quicklinkview">Quick Links</div>
                         <ul>
-                            <li><a href="<?= base_url('about') ?>">About</a></li>
-                            <li><a href="<?= base_url('updates') ?>">Updates</a></li>
-                            <li><a href="<?= base_url('quality') ?>">Quality</a></li>
-                            <li><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li>
-                            <li><a href="<?= base_url('contact-us') ?>">Contact</a></li>
+                            <li><a href="<?=base_url('about')?>">About</a></li>
+                            <li><a href="<?=base_url('updates')?>">Updates</a></li>
+                            <li><a href="<?=base_url('quality')?>">Quality</a></li>
+                            <li><a href="<?=base_url('infrastructure')?>">Infrastructure</a></li>
+                            <li><a href="<?=base_url('contact-us')?>">Contact</a></li>
                         </ul>
                     </div>
                 </div>
@@ -608,15 +822,15 @@
                         <ul>
 
                             <li><a href="#" target="_blank"><img class="addressview"
-                                        src="<?= base_url() ?>assets/images/location.png"
-                                        alt="#"><?= $about_text['address'] ?></a></li>
+                                        src="<?=base_url()?>assets/images/location.png"
+                                        alt="#"><?=$about_text['address']?></a></li>
                             <li>
                                 <a href="#" target="_blank"><img
                                         src="https://cdn-icons-png.flaticon.com/512/739/739247.png" alt="#">
-                                    <?= $about_text['phone'] ?></a>
-                                <a href="mailto: <?= $about_text['email'] ?>"><img
-                                        src="<?= base_url() ?>assets/images/mail.png" alt="#">
-                                    <?= $about_text['email'] ?></a>
+                                    <?=$about_text['phone']?></a>
+                                <a href="mailto: <?=$about_text['email']?>"><img
+                                        src="<?=base_url()?>assets/images/mail.png" alt="#">
+                                    <?=$about_text['email']?></a>
                             </li>
 
 
@@ -639,7 +853,7 @@
         <div class="footerbottom">
             <a href="#topview">
                 <div class="arrowtoptobottom">
-                    <img src="<?= base_url() ?>assets/images/navigation.png" alt="#" />
+                    <img src="<?=base_url()?>assets/images/navigation.png" alt="#" />
                 </div>
             </a>
             <div class="auto-container">
@@ -2092,7 +2306,7 @@
         telInput.on("keyup change", reset);
     </script>
 
-    <script src="<?= base_url() ?>assets/js/getintouch.js?v=02122023"></script>
+    <script src="<?=base_url()?>assets/js/getintouch.js?v=02122023"></script>
 
     <script>
         function formatDateInput(e) {
@@ -2316,20 +2530,20 @@
     </script>
 
 
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/Carousel.js"></script>
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/Carousel.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/owl.carousel.min.js"></script>
 
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
-    <script src="<?= base_url() ?>assets/js/fullcalendar/dist/index.global.js"></script>
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/aos.js"></script>
+    <script src="<?=base_url()?>assets/js/fullcalendar/dist/index.global.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/aos.js"></script>
 
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
 
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/coustom.js?v=3"></script>
-    <script type="text/javascript" src="<?= base_url() ?>assets/js/common.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/coustom.js?v=3"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/js/common.js"></script>
 
     <script>
         $(document).ready(function () {
