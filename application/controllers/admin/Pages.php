@@ -421,6 +421,93 @@ class Pages extends Admin
         redirect('/');
     }
 
+    public function update_user(){
+        //$this->prd($this->input->post());
+        $this->init_model(MODEL_PAGES);
+        $user_data = [
+            'user_name' => $this->input->post('user_name'),
+            'email' => $this->input->post('email'),
+            'phone' => $this->input->post('phone'),
+        ];
+
+        $user_details_data = [
+            'dob' =>  $this->input->post('dob'),
+            'gender' =>  $this->input->post('gender'),
+            'language' =>  $this->input->post('language'),
+            'skills' =>  $this->input->post('skills'),
+            'marital_status' =>  $this->input->post('maritalStatus'),
+            'state' =>  $this->input->post('state'),
+            'city' =>  $this->input->post('city'),
+            'experience' =>  $this->input->post('experience'),
+            'social_media_links' =>  $this->input->post('social_links'),
+            'status' => 'complete',
+        ];
+
+        if(!empty($_FILES['user_image']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/user_img/', 'user_image', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $user_details_data['img'] = '/uploads/user_img/' . $upload_data['file_name'];
+            }
+        }
+
+        if(!empty($_FILES['aadhar_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/user_document/', 'aadhar_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $user_details_data['aadhar'] = '/uploads/user_document/' . $upload_data['file_name'];
+            }
+        }
+
+        if(!empty($_FILES['pan_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/user_document/', 'pan_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $user_details_data['pan'] = '/uploads/user_document/' . $upload_data['file_name'];
+            }
+        }
+
+        if(!empty($_FILES['resume_img']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/user_document/', 'resume_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $user_details_data['resume'] = '/uploads/user_document/' . $upload_data['file_name'];
+            }
+        }
+
+        // if($user_image_data != '' && $user_aadhar_data != '' && $user_pan_data != '' && $user_resume_data != '' &&){
+            $update = $this->Pages_model->update_user($user_data, $user_details_data, $this->input->post('user_id'));
+            if($update){
+                redirect('account');
+            }
+        // }
+        
+        
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function delete_banner_img()
     {

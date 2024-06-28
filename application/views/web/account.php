@@ -440,126 +440,138 @@
                             <div class="tab">
                                 <button class="tablinks active" onclick="openCity(event, 'user_info')">User Info</button>
                                 <button class="tablinks" onclick="openCity(event, 'appiled_jobs')">Applied Jobs</button>
-                                <button class="tablinks" onclick="logout()" style="float: right;">Logout</button>
+                                <button class="tablinks" onclick="logout()" style="float: right;"><i class="fas fa-sign-out-alt"></i> Logout</button>
                             </div>
 
                             <!-- Tab content -->
                             <div id="user_info" class="tabcontent active" style="display: block;">
                                 <!-- <h3>London</h3>
                                 <p>London is the capital city of England.</p> -->
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <label class="form-label">Name*</label>
-                                        <input type="text" class="form-control" value="<?= $user['user_name'] ?>">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Email*</label>
-                                        <input type="email" class="form-control" value="<?= $user['email'] ?>">
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Image*</label>
-                                        <input type="file" class="form-control" placeholder="Banner image" name="user_image[]" required/>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <label class="form-label"> </label>
-                                        <div id="userImagePreview"></div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Phone*</label>
-                                        <input type="number" class="form-control" value="<?= $user['phone'] ?>">
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Date of Birth*</label>
-                                        <input type="date" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Gender*</label>
-                                        <div class="gender-group">
-                                            <label class="gender-option">
-                                                <input type="radio" name="gender" value="male" required> Male
-                                            </label>
-                                            <label class="gender-option">
-                                                <input type="radio" name="gender" value="female"> Female
-                                            </label>
-                                            <label class="gender-option">
-                                                <input type="radio" name="gender" value="other"> Other
-                                            </label>
+                                <form action="<?= base_url("admin/pages/update_user") ?>" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label class="form-label">Name*</label>
+                                            <input type="text" class="form-control" name="user_name" value="<?= $user['user_name'] ?>" required>
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Language*</label>
-                                        <input type="text" class="form-control" value="<?= $user['language'] ?>">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Email*</label>
+                                            <input type="email" class="form-control" name="email" value="<?= $user['email'] ?>">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label class="form-label">Image*</label>
+                                            <input type="file" class="form-control" placeholder="User image" name="user_image[]"/>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label class="form-label"> </label>
+                                            <div id="userImagePreview"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Skills*</label>
-                                        <input type="text" class="form-control" value="<?= $user['skills'] ?>">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Phone*</label>
+                                            <input type="number" class="form-control" name="phone" value="<?= $user['phone'] ?>" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Date of Birth*</label>
+                                            <input type="date" name="dob" class="form-control" value="<?= $user['dob']?>" required>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Marital Status*</label>
-                                        <select class="form-control" name="" id="merital_status">
-                                            <option value="">Select</option>
-                                            <option value="married">Married</option>
-                                            <option value="unmarried">Unmarried</option>
-                                            <option value="devorded">Devorced</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Gender*</label>
+                                            <div class="gender-group">
+                                                <label class="gender-option">
+                                                    <input type="radio" <?= $user['gender'] == 'male' ? 'checked' : ''; ?> name="gender" value="male" required> Male
+                                                </label>
+                                                <label class="gender-option">
+                                                    <input type="radio" <?= $user['gender'] == 'female' ? 'checked' : ''; ?> name="gender" value="female"> Female
+                                                </label>
+                                                <label class="gender-option">
+                                                    <input type="radio" <?= $user['gender'] == 'other' ? 'checked' : ''; ?> name="gender" value="other"> Other
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Language*</label>
+                                            <input type="text" class="form-control" name="language" value="<?= $user['language'] ?>" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                <div class="col-lg-3">
-                                        <label class="form-label">Aadhar*</label>
-                                        <input type="file" class="form-control" placeholder="Aadhar image" name="aadhar_img[]" required/>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Skills*</label>
+                                            <input type="text" class="form-control" name="skills" value="<?= $user['skills'] ?>" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Marital Status*</label>
+                                            <select class="form-control" name="maritalStatus" id="merital_status" required>
+                                                <?php if(!empty($user['marital_status'])){?>
+                                                    <option selected value="<?= $user['marital_status']?>"><?= $user['marital_status']?></option>
+                                                    <?php }?>
+                                                <option value="">Select</option>
+                                                <option value="Married">Married</option>
+                                                <option value="Unmarried">Unmarried</option>
+                                                <option value="Devorded">Devorced</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <label class="form-label"> </label>
-                                        <div id="aadharImagePreview"></div>
-                                    </div>
+                                    <div class="row">
                                     <div class="col-lg-3">
-                                        <label class="form-label">PAN*</label>
-                                        <input type="file" class="form-control" placeholder="PAN image" name="pan_img[]" required/>
+                                            <label class="form-label">Aadhar*</label>
+                                            <input type="file" class="form-control" placeholder="Aadhar image" name="aadhar_img[]"/>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label class="form-label"> </label>
+                                            <div id="aadharImagePreview"></div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label class="form-label">PAN*</label>
+                                            <input type="file" class="form-control" placeholder="PAN image" name="pan_img[]"/>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label class="form-label"> </label>
+                                            <div id="panImagePreview"></div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-2">
-                                        <label class="form-label"> </label>
-                                        <div id="panImagePreview"></div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">State*</label>
+                                            <input type="text" class="form-control" name="state" value="<?= $user['state'] ?>" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">City*</label>
+                                            <input type="text" class="form-control" name="city" value="<?= $user['city'] ?>" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">State*</label>
-                                        <input type="text" class="form-control" value="<?= $user['state'] ?>">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Experience</label>
+                                            <input type="text" class="form-control" name="experience" value="<?= $user['experience'] ?>" required>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label class="form-label">Social Media Links</label>
+                                            <input type="text" class="form-control" name="social_links" value="<?= $user['social_media_links'] ?>" required>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">City*</label>
-                                        <input type="text" class="form-control" value="<?= $user['city'] ?>">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <label class="form-label">Resume* (PDF only)</label>
+                                            <input type="file" class="form-control" placeholder="Resume" name="resume_img[]"/>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <label class="form-label"> </label>
+                                            <div id="resumeImagePreview"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Experience</label>
-                                        <input type="text" class="form-control" value="<?= $user['experience'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user['user_id']?>">
+                                    <div class="row">
+                                        <div class="form-group mt-2">
+                                            <input type="submit" class="btn btn-success align-right" id="" value="Update">
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Social Media Links</label>
-                                        <input type="text" class="form-control" value="<?= $user['social_media_links'] ?>">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <label class="form-label">Resume* (PDF only)</label>
-                                        <input type="file" class="form-control" placeholder="Resume" name="resume_img[]" required/>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <label class="form-label"> </label>
-                                        <div id="resumeImagePreview"></div>
-                                    </div>
-                                </div>
+                                    
+                                </form>
                             </div>
 
                             <div id="appiled_jobs" class="tabcontent">
@@ -2348,6 +2360,10 @@
                 format: 'dd/mm/yyyy',
                 autoclose: true
             });
+            $('#userImagePreview').html(`<img src="<?= base_url().$user['img']?>" height="100"/>`);
+            $('#aadharImagePreview').html(`<img src="<?= base_url().$user['aadhar']?>" height="100"/>`);
+            $('#panImagePreview').html(`<img src="<?= base_url().$user['pan']?>" height="100"/>`);
+            $('#resumeImagePreview').html(`<iframe src="<?= base_url().$user['resume']?>" class="pdf-container" height=200" width="200"></iframe>`);
         });
 
         function activateBookATour() {

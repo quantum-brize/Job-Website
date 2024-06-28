@@ -890,4 +890,18 @@ class Pages_model extends Admin_model
         return $this->db->affected_rows() > 0;
     }
 
+    public function update_user($user_data, $user_details_data, $user_id)
+    {
+        $update_user_data = $this->db->where(['uid' => $user_id])
+            ->update('users', $user_data);
+        if($update_user_data){
+            $update_user_details_data = $this->db->where(['user_id' => $user_id])
+            ->update(' user_details', $user_details_data);
+            if($update_user_details_data){
+                return $update_user_details_data;
+            }
+        }
+        
+    }
+
 }
