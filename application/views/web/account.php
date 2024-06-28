@@ -444,7 +444,7 @@
                             </div>
 
                             <!-- Tab content -->
-                            <div id="user_info" class="tabcontent active">
+                            <div id="user_info" class="tabcontent active" style="display: block;">
                                 <!-- <h3>London</h3>
                                 <p>London is the capital city of England.</p> -->
                                 <div class="row">
