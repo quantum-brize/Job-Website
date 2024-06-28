@@ -440,7 +440,7 @@
                             <div class="tab">
                                 <button class="tablinks active" onclick="openCity(event, 'user_info')">User Info</button>
                                 <button class="tablinks" onclick="openCity(event, 'appiled_jobs')">Applied Jobs</button>
-                                <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
+                                <button class="tablinks" onclick="logout()" style="float: right;">Logout</button>
                             </div>
 
                             <!-- Tab content -->
@@ -2379,6 +2379,10 @@
             // Show the current tab, and add an "active" class to the button that opened the tab
             document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
+        }
+
+        function logout(){
+            window.location.href = '<?= base_url('Common/user_logout')?>';
         }
     </script>
 </body>
