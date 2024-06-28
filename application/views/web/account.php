@@ -439,8 +439,8 @@
                             <!-- Tab links -->
                             <div class="tab">
                                 <button class="tablinks active" onclick="openCity(event, 'user_info')">User Info</button>
-                                <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-                                <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+                                <button class="tablinks" onclick="openCity(event, 'appiled_jobs')">Applied Jobs</button>
+                                <!-- <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button> -->
                             </div>
 
                             <!-- Tab content -->
@@ -458,9 +458,13 @@
                                         <label class="form-label">Email*</label>
                                         <input type="email" class="form-control" value="<?= $user['email'] ?>">
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-3">
                                         <label class="form-label">Image*</label>
-                                        <input type="file" class="form-control">
+                                        <input type="file" class="form-control" placeholder="Banner image" name="user_image[]" required/>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label class="form-label"> </label>
+                                        <div id="userImagePreview"></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -509,13 +513,21 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6">
+                                <div class="col-lg-3">
                                         <label class="form-label">Aadhar*</label>
-                                        <input type="file" class="form-control">
+                                        <input type="file" class="form-control" placeholder="Aadhar image" name="aadhar_img[]" required/>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Pan*</label>
-                                        <input type="file" class="form-control">
+                                    <div class="col-lg-2">
+                                        <label class="form-label"> </label>
+                                        <div id="aadharImagePreview"></div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="form-label">PAN*</label>
+                                        <input type="file" class="form-control" placeholder="PAN image" name="pan_img[]" required/>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label class="form-label"> </label>
+                                        <div id="panImagePreview"></div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -539,22 +551,26 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-lg-6">
-                                        <label class="form-label">Resume*</label>
-                                        <input type="file" class="form-control">
+                                    <div class="col-lg-3">
+                                        <label class="form-label">Resume* (PDF only)</label>
+                                        <input type="file" class="form-control" placeholder="Resume" name="resume_img[]" required/>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label class="form-label"> </label>
+                                        <div id="resumeImagePreview"></div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div id="Paris" class="tabcontent">
+                            <div id="appiled_jobs" class="tabcontent">
                                 <h3>Paris</h3>
                                 <p>Paris is the capital of France.</p>
                             </div>
 
-                            <div id="Tokyo" class="tabcontent">
+                            <!-- <div id="Tokyo" class="tabcontent">
                                 <h3>Tokyo</h3>
                                 <p>Tokyo is the capital of Japan.</p>
-                            </div>
+                            </div> -->
                         <!-- <div class="row cards-in">
                             <div class="col-md-12">
                                 <div class="card-custom">
