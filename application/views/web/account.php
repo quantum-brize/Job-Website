@@ -235,6 +235,11 @@
                                         href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                                 <li data-tab=""><a href="<?= base_url('account') ?>">Account </a></li>
+                                <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
+                                    <li data-tab=""><a href="<?= base_url('Common/user_logout') ?>">Logout </a></li>
+                                <?php } else {?>
+                                    <li data-tab=""><a href="<?= base_url('login') ?>">Login </a></li>
+                                <?php }?>
                             </ul>
                         </div>
 
@@ -506,13 +511,10 @@
                                         <div class="col-lg-6">
                                             <label class="form-label">Marital Status*</label>
                                             <select class="form-control" name="maritalStatus" id="merital_status" required>
-                                                <?php if(!empty($user['marital_status'])){?>
-                                                    <option selected value="<?= $user['marital_status']?>"><?= $user['marital_status']?></option>
-                                                    <?php }?>
                                                 <option value="">Select</option>
-                                                <option value="Married">Married</option>
-                                                <option value="Unmarried">Unmarried</option>
-                                                <option value="Devorded">Devorced</option>
+                                                <option <?= $user['marital_status'] == 'Married' ? 'selected' : ''; ?> value="Married">Married</option>
+                                                <option <?= $user['marital_status'] == 'Unmarried' ? 'selected' : ''; ?> value="Unmarried">Unmarried</option>
+                                                <option <?= $user['marital_status'] == 'Devorded' ? 'selected' : ''; ?> value="Devorded">Devorced</option>
                                             </select>
                                         </div>
                                     </div>

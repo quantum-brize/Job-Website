@@ -43,8 +43,8 @@ define('field_location', 'Asia/Kolkata');
 
 //////////////////////////////////////////////__URL
 
-define('BASE_URL', 'https://quantumbrize.in/website/job/');
-// define('BASE_URL', 'http://localhost/Job-Website/');
+// define('BASE_URL', 'https://quantumbrize.in/website/job/');
+define('BASE_URL', 'http://localhost/Job-Website/');
 
 //////////////////////////////////////////////__PAGEDATA
 define('PAGE_DATA_WEB', ['data_page' => [], 'data_header' => ['header_link' => [], 'title' => '', 'projects' => [], 'header' => [], 'sidebar' => [], 'site' => 'web'], 'data_footer' => ['footer_link' => [], 'footer' => [], 'site' => 'web']]);

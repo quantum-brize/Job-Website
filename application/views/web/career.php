@@ -378,6 +378,12 @@
                                 <!-- <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
                                 <li data-tab=""><a href="<?= base_url('account') ?>">Account </a></li>
+                                <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
+                                    <li data-tab=""><a href="<?= base_url('Common/user_logout') ?>">Logout </a></li>
+                                <?php } else {?>
+                                    <li data-tab=""><a href="<?= base_url('login') ?>">Login </a></li>
+                                <?php }?>
+
                             </ul>
                         </div>
 
