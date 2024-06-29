@@ -470,10 +470,10 @@
                     <span></span>
                 </div>
             </div>
-            <a href="<?=base_url('contact-us')?>" onclick="activateGetInTouch();">
+            <a href="<?= base_url('account') ?>">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
-                    <p>Contact</p>
-                    <img src="<?=base_url()?>assets/images/mail.png" alt="#">
+                    <p>Account</p>
+                    <i class="fas fa-user"></i>
                 </div>
             </a>
         </div>
@@ -492,11 +492,10 @@
                                 </li> -->
                                 <!-- <li data-tab="beyondclassroom"><a href="<?=base_url('updates')?>">Updates</a></li> -->
                                 <!-- <li data-tab="beyondclassroom"><a href="<?=base_url('quality')?>">Quality</a></li> -->
-                                <li data-tab="beyondclassroom"><a href="<?=base_url('career')?>">Jobs</a></li>
+                                <li data-tab="beyondclassroom"><a href="<?=base_url('job')?>">Jobs</a></li>
                                 <!-- <li data-tab="admissionmenu"><a
                                         href="<?=base_url('infrastructure')?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?=base_url('contact-us')?>">Contact us </a></li>
-                                <li data-tab=""><a href="<?= base_url('account') ?>">Account </a></li>
                                 <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
                                     <li data-tab=""><a href="<?= base_url('Common/user_logout') ?>">Logout </a></li>
                                 <?php } else {?>
@@ -543,35 +542,40 @@ if ($products) {
 
 
 
-                        <ul class="navmobile">
-                            <li class="nav__item"><a href="<?=base_url('home')?>" class="nav__link">Home</a></li>
-                            <li class="nav__item"><a class="nav__link" href="<?=base_url('about')?>">About Us</a></li>
-                            <li class="nav__item">
+                    <ul class="navmobile">
+                            <li class="nav__item"><a href="<?= base_url('home') ?>" class="nav__link">Home</a></li>
+                            <li class="nav__item"><a class="nav__link" href="<?= base_url('about') ?>">About Us</a></li>
+                            <!-- <li class="nav__item">
                                 <a class="nav__link" href="#">Products <i class="fas fa-chevron-right"></i></a>
                                 <ul class="nav__sub">
                                     <?php
-if ($products) {
-    foreach ($products as $index => $item) {
-        ?>
+                                    if ($products) {
+                                        foreach ($products as $index => $item) {
+                                            ?>
                                             <li>
                                                 <a
-                                                    href="<?=base_url('product?p_id=') . $item['uid']?>"><?=$item['name']?></a>
+                                                    href="<?= base_url('product?p_id=') . $item['uid'] ?>"><?= $item['name'] ?></a>
                                             </li>
                                             <?php
-}
-}
-?>
+                                        }
+                                    }
+                                    ?>
                                 </ul>
+                            </li> -->
+                            <li class="nav__item"><a href="<?= base_url('updates') ?>" class="nav__link">Updates</a>
                             </li>
-                            <li class="nav__item"><a href="<?=base_url('updates')?>" class="nav__link">Updates</a>
-                            </li>
-                            <li class="nav__item"><a href="<?=base_url('infrastructure')?>"
-                                    class="nav__link">Infrastructure</a></li>
-                            <li class="nav__item"><a href="<?=base_url('quality')?>" class="nav__link">quality</a></li>
-                            <li class="nav__item"><a href="<?=base_url('career')?>">Careers</a></li>
+                            <!-- <li class="nav__item"><a href="<?= base_url('infrastructure') ?>"
+                                    class="nav__link">Infrastructure</a></li> -->
+                            <!-- <li class="nav__item"><a href="<?= base_url('quality') ?>" class="nav__link">quality</a></li> -->
+                            <li class="nav__item"><a href="<?= base_url('career') ?>" class="nav__link">Job</a></li>
 
-                            <li class="nav__item"><a href="<?=base_url('contact-us')?>" class="nav__link">Contact
+                            <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
                                     us</a></li>
+                            <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
+                                <li class="nav__item"><a href="<?= base_url('Common/user_logout') ?>" class="nav__link">Logout</a></li>
+                            <?php } else {?>
+                                <li class="nav__item"><a href="<?= base_url('login') ?>" class="nav__link">Login</a></li>
+                            <?php }?>
                         </ul>
 
                     </div>

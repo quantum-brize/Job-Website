@@ -904,4 +904,28 @@ class Pages_model extends Admin_model
         
     }
 
+    public function get_category_with_jobs()
+    {
+        $data = $this->db
+            ->select('*')
+            ->from('categories')
+            ->get();
+        $data = $data->result_array();
+        //$this->prd($banner);
+        if(count($data) > 0){
+            foreach ($data as $key => $cat) {
+                $job_data = $this->db
+                ->select('*') // Select fields from both tables
+                ->from('job_openings')
+                ->where(['job_openings.category_id' => $cat['uid']])
+                ->get();
+            $job_data =$job_data->result_array();
+            $data[$key]['job'] =  !empty($job_data) ? $job_data : [];
+            }
+        }
+        
+        return $data;
+    }
+    
+
 }
