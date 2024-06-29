@@ -60,6 +60,20 @@ class Pages extends Admin
 
     }
 
+    public function categories()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['categories_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['categoris'] = true;
+        $data['data_page']['categories'] = $this->Pages_model->get_categories();
+
+        $this->is_auth('admin/categories.php', $data);
+
+    }
+
     public function view_product(){
         $this->init_model(MODEL_PAGES);
         $data = PAGE_DATA_ADMIN;
@@ -85,6 +99,31 @@ class Pages extends Admin
         $data['data_header']['sidebar']['product'] = true;
         $this->is_auth('admin/product_add.php', $data);
 
+    }
+
+    public function category_add()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $data['data_footer']['footer_link'] = ['category_add_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['categoris'] = true;
+        $this->is_auth('admin/category_add.php', $data);
+
+    }
+
+    public function view_category(){
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_ADMIN;
+        $uid = $this->input->get('uid');
+        $data['data_footer']['footer_link'] = ['category_update_js.php'];
+        $data['data_header']['title'] = 'Admin | Pages';
+        $data['data_header']['sidebar']['pages'] = true;
+        $data['data_header']['sidebar']['categories'] = true;
+        $data['data_page']['category'] = $this->Pages_model->get_category_by_id($uid);
+
+        $this->is_auth('admin/category_update.php', $data);
     }
 
     public function product_feature_add(){
@@ -201,6 +240,27 @@ class Pages extends Admin
         redirect('admin/pages/view_product?uid=' . $this->input->post('product_uid'));
     }
 
+    public function update_category(){
+        //$this->prd($this->input->post());
+        $this->init_model(MODEL_PAGES);
+        $category_data = [
+            'name' => $this->input->post('name')
+        ];
+        if(!empty($_FILES['category_icon']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/category_icon/', 'category_icon', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $category_data['icon'] = '/uploads/category_icon/' . $upload_data['file_name'];
+            }
+        }
+
+        $update = $this->Pages_model->update_category($category_data, $this->input->post('category_id'));
+        if($update){
+            redirect('admin/pages/view_category?uid=' . $this->input->post('category_id'));
+        }
+        
+    }
+
+
     public function update_alert(){
         $this->init_model(MODEL_PAGES);
         if(!empty($_FILES['allerts_img']['name'][0])){
@@ -255,12 +315,21 @@ class Pages extends Admin
 
     public function add_category(){
         $this->init_model(MODEL_PAGES);
-        $insert_cat_data = $this->Pages_model->add_category($this->input->post());
+        $insert_data = [
+            'uid' => $this->generate_uid('CAT'),
+            'name' =>  $this->input->post('name')
+        ];
+        if(!empty($_FILES['category_icon']['name'][0])){
+            $upload_data = $this->upload_files('./uploads/category_icon/', 'category_icon', IMG_FILE_TYPES, IMG_FILE_SIZE);
+            if($upload_data){
+                $insert_data['icon'] = '/uploads/category_icon/' . $upload_data['file_name'];
+            }
+        }
+
+        $insert_cat_data = $this->Pages_model->add_category($insert_data);
         if($insert_cat_data){
-            echo "Data has been successfully added!";
-        }else{
-            echo "Current data addition was unsuccessful!";
-        };
+            redirect('/admin/categories');
+        }
     }
 
     public function update_banner_text(){
@@ -516,6 +585,15 @@ class Pages extends Admin
         $this->Pages_model->delete_banner_img($uid);
 
         redirect('/admin/home');
+    }
+
+    public function delete_category()
+    {
+        $uid = $this->input->get('uid');
+        $this->init_model(MODEL_PAGES);
+        $this->Pages_model->delete_category($uid);
+
+        redirect('/admin/categories');
     }
 
     public function delete_announcement_file(){

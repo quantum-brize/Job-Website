@@ -205,6 +205,13 @@ class Pages_model extends Admin_model
         return $update;
     }
 
+    public function update_category($category_data, $category_id)
+    {
+        $update = $this->db->where(['uid' => $category_id])
+            ->update('categories', $category_data);
+        return $update;
+    }
+
     public function update_infrastructure($data)
     {
 
@@ -486,11 +493,11 @@ class Pages_model extends Admin_model
         $this->db->insert('job_openings', $insert_data);
     }
 
-    public function add_category($data){
-        $insert_data = [
-            'uid' => $this->generate_uid('CAT'),
-            'name' =>  $data['name']
-        ];
+    public function add_category($insert_data){
+        // $insert_data = [
+        //     'uid' => $this->generate_uid('CAT'),
+        //     'name' =>  $data['name']
+        // ];
         $add_data = $this->db->insert('categories', $insert_data);
         if($add_data){
             return true;
@@ -754,6 +761,16 @@ class Pages_model extends Admin_model
 
     }
 
+    public function get_category_by_id($uid)
+    {
+        $this->db->where('uid', $uid);
+        $query = $this->db->get('categories');
+        $query = $query->result_array();
+        return !empty($query) ? $query[0] : [];
+
+
+    }
+
     public function get_product_features_by_id($uid)
     {
         $this->db->where('product_id', $uid);
@@ -785,6 +802,14 @@ class Pages_model extends Admin_model
     {
         $this->db->where('uid', $uid);
         $this->db->delete('home_banner_img');
+        return $this->db->affected_rows() > 0;
+
+    }
+
+    public function delete_category($uid)
+    {
+        $this->db->where('uid', $uid);
+        $this->db->delete('categories');
         return $this->db->affected_rows() > 0;
 
     }

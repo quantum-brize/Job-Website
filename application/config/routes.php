@@ -41,5 +41,7 @@ $route['admin/flyers']                  = 'admin/Admin/flyers';
 $route['admin/jobs']                    = 'admin/Admin/jobs';
 $route['admin/product/features/add']    = 'admin/pages/product_feature_add';
 $route['admin/users']                   = 'admin/pages/view_users';
+$route['admin/categories']              = 'admin/pages/categories';
+$route['admin/category/add']            = 'admin/pages/category_add';
 
 

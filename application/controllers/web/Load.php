@@ -28,6 +28,7 @@ class Load extends Common
         $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
         $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
         $data['data_page']['categories'] = $this->Pages_model->get_category_with_jobs();
+        $data['data_page']['jobs'] = $this->Pages_model->get_jobs();
 
 
         $this->load_page('web/home.php', $data);

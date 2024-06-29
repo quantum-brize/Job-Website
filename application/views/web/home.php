@@ -794,8 +794,9 @@ if (false) {
                     <a href="#">
                         <div class="card">
                             <div class="user-icon">
-                                <div class="inner-circle-small"></div>
-                                <div class="inner-circle-big"></div>
+                                <!-- <div class="inner-circle-small"></div>
+                                <div class="inner-circle-big"></div> -->
+                                <img src="<?= base_url().$cat['icon']?>" alt="" style="max-height:100px; max-width: 100px;">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><?= $cat['name']?></h5>
@@ -884,6 +885,11 @@ if (false) {
                 </div>
             </div>
             <div class="row">
+                <?php
+                    if(!empty($jobs)){
+                        foreach($jobs as $index1 => $job){
+                            if($index1 < 6){
+                ?>
                 <div class="col-md-4">
                     <a href="#">
                         <div class="job-card">
@@ -891,17 +897,19 @@ if (false) {
                             <div class="save-icon">
                                 <i class="far fa-bookmark"></i>
                             </div>
-                            <h3 class="job-title">Grafic designer</h3>
+                            <h3 class="job-title"><?= $job['title']?></h3>
                             <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
-                            <p class="job-location"><i class="fas fa-map-marker-alt"></i>Karabuk, Karabuk, Turkey</p>
+                            <p class="job-location"><i class="fas fa-map-marker-alt"></i><?= $job['location']?></p>
                             <div class="job-skill">
-                                <span>Computer Skill</span>
-                                <span>4+</span>
+                                <span>Experience: <?= $job['experience']?></span>
+                                <!-- <span>4+</span> -->
                             </div>
                         </div>
                     </a>    
                 </div>
-                <div class="col-md-4">
+
+                <?php }}}?>
+                <!-- <div class="col-md-4">
                     <a href="#">
                         <div class="job-card">
                             <div class="style"></div>
@@ -934,7 +942,7 @@ if (false) {
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> -->
             </div>
             <div class="row mt-4">
                 <div class="col text-center">

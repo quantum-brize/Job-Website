@@ -60,18 +60,25 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link"
+                    href="<?= base_url('/admin/categories') ?>">
+                    <i class="fa fa-info-circle mr-1"></i>
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
                     href="<?= base_url('/admin/products') ?>">
                     <i class="fas fa-fw fa-box-open mr-1"></i>
                     <span>Products</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/infrastructure') ?>">
                     <i class="fas fa-building mr-1"></i>
                     <span>Infrastructure</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/jobs') ?>">
@@ -79,20 +86,20 @@
                     <span>Jobs</span>   
                 </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/updates') ?>">
                     <i class="fas fa-fw fa-info mr-1"></i>
                     <span>Updates</span>
                 </a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+            <!-- <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/quality') ?>">
                     <i class="fas fa-check mr-1"></i>
                     <span>Quality</span>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/flyers') ?>">
