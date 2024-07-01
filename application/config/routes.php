@@ -19,6 +19,7 @@ $route['updates']                       = 'web/load/updates';
 $route['infrastructure']                = 'web/load/infrastructure';
 $route['quality']                       = 'web/load/quality';
 $route['account']                       = 'web/load/account';
+$route['categories']                       = 'web/load/categories';
 
 $route['signup']                        = 'web/load/load_user_signup';
 $route['signup-success']                = 'web/load/load_user_signup_success';

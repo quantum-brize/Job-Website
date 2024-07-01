@@ -210,6 +210,30 @@ class Pages extends Admin
         return $this->response($resp);
     }
 
+    public function get_all_categories()
+    {
+		$resp = [
+            KEY_STATUS => false,
+            KEY_MESSAGE => '',
+            'data' => ''
+        ];
+        $this->init_model(MODEL_PAGES);
+        $data = $this->Pages_model->get_category_with_jobs();
+        if(!empty($data)){
+            $resp = [
+                KEY_STATUS => true,
+                KEY_MESSAGE => 'Categories found',
+                'data' => $data
+            ];
+        } else{
+            $resp = [
+                KEY_MESSAGE => 'Categories not found!',
+                'data' => ''
+            ];
+        }
+        return $this->response($resp);
+    }
+
 
     public function add_new_product(){
         $data = $this->input->post();

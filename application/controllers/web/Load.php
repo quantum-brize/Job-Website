@@ -202,5 +202,19 @@ class Load extends Common
         $data['data_page']['related_jobs'] = $this->Pages_model->get_jobs_by_category_id($data['data_page']['job']);
         $this->load_page('web/job_details.php', $data);
     }
+
+    public function categories()
+    {
+        $this->init_model(MODEL_PAGES);
+        $data = PAGE_DATA_WEB;        
+        $data['data_header']['categories'] = true;
+        // $data['data_page']['products'] = $this->Pages_model->get_product();
+        $data['data_page']['flyers'] = $this->Pages_model->get_flyer();
+        $data['data_page']['action_buttons'] = $this->Pages_model->get_action_buttons();
+        $data['data_page']['about_text'] = $this->Pages_model->get_all_about_text();
+        // $data['data_page']['categories'] = $this->Pages_model->get_category_with_jobs();
+
+        $this->load_page('web/categories.php', $data);
+    }
 }
 ?>

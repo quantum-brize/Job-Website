@@ -582,7 +582,7 @@ if (false) {
             <a href="<?= base_url('account') ?>">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Account</p>
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" style="color: white;"></i>
                 </div>
             </a>
         </div>
@@ -785,12 +785,12 @@ if (false) {
             </div>
             </div>
             <div class="row">
-            <?php if(!empty($categories)){
-                foreach($categories as $index => $cat){
-                    if($index < 8){
-                $total_jobs = count($cat['job']);
-            ?>
-            <div class="col-md-3 col-sm-6 mb-4">
+                <?php if(!empty($categories)){
+                    foreach($categories as $index => $cat){
+                        if($index < 8){
+                    $total_jobs = count($cat['job']);
+                ?>
+                <div class="col-md-3 col-sm-6 mb-4">
                     <a href="#">
                         <div class="card">
                             <div class="user-icon">
@@ -804,8 +804,8 @@ if (false) {
                             </div>
                         </div>
                     </a>
-            </div>
-            <?php }}} else{ ?>
+                </div>
+                <?php }}} else{ ?>
                 
             <?php }?>
             <!-- <div class="col-md-3 col-sm-6 mb-4">
@@ -867,7 +867,7 @@ if (false) {
         </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <a href="<?= base_url('job')?>" class="btn btn-browse-all mt-4">Browse All</a href="<?= base_url('job')?>">
+                    <a href="<?= base_url('categories')?>" class="btn btn-browse-all mt-4">Browse All</a href="<?= base_url('job')?>">
                 </div>
             </div>
     </div>
@@ -978,9 +978,9 @@ if (false) {
                 ?>
             </div>
             <a href="#" class="arrowtopagetopper"></a>
-            <!-- <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
+            <div class="allnews" data-aos="fade-up" data-aos-duration="2000" data-aos-offset="0">
                 <a href="#" class="allbtnview"><span>VIEW ALL</span></a>
-            </div> -->
+            </div>
         </div>
     </section>
     <!--achievement-->
@@ -989,7 +989,7 @@ if (false) {
     <!--Appreciation-->
     <section class="appreciationmain">
         <div class="auto-container">
-            <div class="subheding" data-aos="fade-up" data-aos-duration="1000">Damiano Appreciation</div>
+            <div class="subheding" data-aos="fade-up" data-aos-duration="1000"> Appreciation</div>
             <div class="appreciation owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="2000">
 
                 <?php
