@@ -182,6 +182,37 @@ class Pages extends Admin
         redirect('/home');
     }
 
+    // public function get_all_jobs(){
+    //     $data['jobs'] = $this->Pages_model->get_jobs();
+    //     return $data;
+    // }
+    public function get_all_jobs()
+    {
+		$resp = [
+            KEY_STATUS => false,
+            KEY_MESSAGE => '',
+            'data' => ''
+        ];
+        $this->init_model(MODEL_PAGES);
+        $data = $this->Pages_model->get_jobs();
+        if(!empty($data)){
+            $resp = [
+                KEY_STATUS => true,
+                KEY_MESSAGE => 'Products found',
+                'data' => $data
+            ];
+        } else{
+            $resp = [
+                KEY_MESSAGE => 'Products not found!',
+                'data' => ''
+            ];
+        }
+			
+        
+        return $this->response($resp);
+    }
+
+
     public function add_new_product(){
         $data = $this->input->post();
         //$upload_data = $this->upload_files('./uploads/product_img/', 'product_img', IMG_FILE_TYPES, IMG_FILE_SIZE);

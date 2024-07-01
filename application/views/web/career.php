@@ -655,8 +655,8 @@
                         <h1 class="headingh1" data-aos="fade-up" data-aos-duration="1000">Jobs</h1>
                         <div class="contactus-right">
                             <div class="container mt-4">
-                                <div class="row">
-                                <div class="col-md-12">
+                                <div class="row" id="all_jobs">
+                                <!-- <div class="col-md-12">
 
                                     <a href="#">
                                         <div class="job-card">
@@ -687,7 +687,7 @@
                                             <a href="#" class="btn btn-lg btn-primary">Apply Now</a>
                                         </div>
                                     </a>
-                                </div>
+                                </div> -->
 
                                 </div>
                             </div>
@@ -2407,6 +2407,49 @@
                 window.location.href = "#contactus";
             }
         </script>
+
+<script>
+        $(document).ready(function () {
+            $.ajax({
+                    type: 'GET',
+                    url: '<?= base_url('admin/Pages/get_all_jobs') ?>',
+                    beforeSend: function () {
+                    },
+                    success: function (resp) {
+                        resp = JSON.parse(resp)
+                        console.log(resp)
+                        var html = ``;
+                        if(resp.status){
+                            $.each(resp.data, function (index, job) {
+                                html += `<div class="col-md-12">
+                                            <a href="#">
+                                                <div class="job-card">
+                                                    <div class="style"></div>
+                                                    <h3 class="job-title">${job.title}</h3>
+                                                    <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
+                                                    <p class="job-location"><i class="fas fa-map-marker-alt"></i>${job.location}</p>
+                                                    <div class="job-skill">
+                                                        <span>Experience: ${job.experience}</span>
+                                                    </div>
+                                                    <a href="#" class="btn btn-lg btn-primary">Apply Now</a>
+                                                </div>
+                                            </a>
+                                        </div>`
+                                })
+                        } else {
+                            html = `<span style="color:red">No Job Found!</span>`
+                        }
+                        $('#all_jobs').html(html)
+                        
+                    },
+                    error: function (err) {
+                        
+                    },
+                    complete: function(){
+                    }
+            }) 
+    })
+</script>
 </body>
 
 </html>

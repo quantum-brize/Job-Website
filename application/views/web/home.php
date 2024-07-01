@@ -867,7 +867,7 @@ if (false) {
         </div>
             <div class="row">
                 <div class="col-12 text-center">
-                    <button class="btn btn-browse-all mt-4">Browse All</button>
+                    <a href="<?= base_url('job')?>" class="btn btn-browse-all mt-4">Browse All</a href="<?= base_url('job')?>">
                 </div>
             </div>
     </div>
@@ -946,7 +946,7 @@ if (false) {
             </div>
             <div class="row mt-4">
                 <div class="col text-center">
-                    <a href="#" class="btn btn-primary">Browse All</a>
+                    <a href="<?= base_url('job')?>" class="btn btn-primary">Browse All</a>
                 </div>
             </div>
         </div>
