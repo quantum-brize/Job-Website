@@ -207,8 +207,6 @@ class Pages extends Admin
                 'data' => ''
             ];
         }
-			
-        
         return $this->response($resp);
     }
 

@@ -2422,7 +2422,7 @@
                         if(resp.status){
                             $.each(resp.data, function (index, job) {
                                 html += `<div class="col-md-12">
-                                            <a href="#">
+                                            <a href="<?= base_url('web/Load/job_details?uid=')?>${job.uid}">
                                                 <div class="job-card">
                                                     <div class="style"></div>
                                                     <h3 class="job-title">${job.title}</h3>

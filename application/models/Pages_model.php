@@ -87,6 +87,18 @@ class Pages_model extends Admin_model
         return isset($data) ? $data[0] : [];
     }
 
+    public function get_jobs_by_category_id($c_id){
+        $data = $this->db
+            ->select('*')
+            ->from('job_openings')
+            ->where(['category_id' => $c_id['category_id']])
+            ->get();
+
+
+        $data = $data->result_array();
+        return isset($data) ? $data : [];
+    }
+
     public function get_all_banner_img()
     {
         $banner = $this->db
@@ -489,6 +501,7 @@ class Pages_model extends Admin_model
             'salary' => $data['salary'],
             'key_responsiblities' => $data['responsibilities'],
             'skills' => $data['skills'],
+            'created_at' => date('Y-m-d'),
         ];
         $this->db->insert('job_openings', $insert_data);
     }

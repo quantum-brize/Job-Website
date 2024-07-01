@@ -510,17 +510,17 @@
                             <div id="academicsmenu" class="tab-content">
                                 <ul>
                                     <?php
-if ($products) {
-    foreach ($products as $index => $item) {
-        ?>
-                                            <li>
-                                                <a
-                                                    href="<?=base_url('product?p_id=') . $item['uid']?>"><?=$item['name']?></a>
-                                            </li>
-                                            <?php
-}
-}
-?>
+                                if ($products) {
+                                    foreach ($products as $index => $item) {
+                                ?>
+                                    <li>
+                                        <a
+                                            href="<?=base_url('product?p_id=') . $item['uid']?>"><?=$item['name']?></a>
+                                    </li>
+                                <?php
+                                    }
+                                }
+                                ?>
                                 </ul>
                             </div>
 
@@ -587,8 +587,8 @@ if ($products) {
                         <div class="rightsideonmenuview">
                             <div class="latestnewsview">
                                 <?php if (!empty($flyers)) {
-    foreach ($flyers as $index => $item) {
-        ?>
+                                    foreach ($flyers as $index => $item) {
+                                        ?>
                                         <div class="samecolor">
                                             <div class="lower-content">
                                                 <div class="newsname">
@@ -607,8 +607,8 @@ if ($products) {
                                             </div>
                                         </div>
                                         <?php
-}
-}?>
+                                        }
+                                        }?>
                             </div>
                         </div>
                     </div>
@@ -704,6 +704,35 @@ if ($products) {
                         </style>
                     </div>
                 </div>
+                <?php
+                    function time_ago($created_date) {
+                        // Create DateTime objects
+                        $date1 = new DateTime($created_date);
+                        $date2 = new DateTime(); // Current date and time
+
+                        // Calculate the difference
+                        $interval = $date1->diff($date2);
+
+                        // Prepare the result based on the interval
+                        if ($interval->y > 0) {
+                            return $interval->y . ($interval->y == 1 ? " year ago" : " years ago");
+                        } elseif ($interval->m > 0) {
+                            return $interval->m . ($interval->m == 1 ? " month ago" : " months ago");
+                        } elseif ($interval->d >= 7) {
+                            $weeks = floor($interval->d / 7);
+                            return $weeks . ($weeks == 1 ? " week ago" : " weeks ago");
+                        } elseif ($interval->d > 0) {
+                            return $interval->d . ($interval->d == 1 ? " day ago" : " days ago");
+                        } elseif ($interval->h > 0) {
+                            return $interval->h . ($interval->h == 1 ? " hour ago" : " hours ago");
+                        } elseif ($interval->i > 0) {
+                            return $interval->i . ($interval->i == 1 ? " minute ago" : " minutes ago");
+                        } else {
+                            return $interval->s . ($interval->s == 1 ? " second ago" : " seconds ago");
+                        }
+                    }
+                ?>
+
                 <div class="col-lg-12 job_wrapper">
                     <div class="allpagesview-right job_details_page_right">
 
@@ -717,9 +746,9 @@ if ($products) {
                             <div class="card_content">
 
                                 <div class="col">
-                                    <div class="job-title">Job title</div>
+                                    <div class="job-title"><?= $job['title']?></div>
                                     <div class="job-details">
-                                        <span class="detail-item"><i class="fas fa-clock"></i> 10 months ago</span>
+                                        <span class="detail-item"><i class="fas fa-clock"></i> <?= time_ago($job['created_at']);?></span>
                                     </div>
                                     <a href="#" class="btn btn-lg btn-primary">Apply for job</a>
                                 </div>
@@ -732,12 +761,12 @@ if ($products) {
                                 <div class="col-md-8">
                                     <div class="job-description">
                                         <h4>Job Description</h4>
-                                        <p>Job description text here.</p>
+                                        <p><?= $job['details']?></p>
                                         <h4>Key Responsibilities</h4>
-                                        <p>N/A</p>
+                                        <p><?= $job['key_responsiblities']?></p>
                                         <h4>Skill & Experience</h4>
                                         <ul>
-                                            <li>Communication Skill</li>
+                                            <li><?= $job['skills']?></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -745,14 +774,14 @@ if ($products) {
                                     <div class="job-overview p-3">
                                         <h4>Job Overview</h4>
                                         <ul class="list-unstyled">
-                                            <li><i class="far fa-calendar-alt"></i> Date Posted: <span>23rd Aug, 2023</span></li>
-                                            <li><i class="far fa-calendar-alt"></i> Expiration date: <span>29th Nov, 2028</span></li>
-                                            <li><i class="fas fa-map-marker-alt"></i> Location: <span>Krasnodar , Krasnodar, Russia</span></li>
-                                            <li><i class="fas fa-briefcase"></i> Job Type: <span>Business and Financial Operations</span></li>
-                                            <li><i class="fas fa-sitemap"></i> Functional Areas: <span>Administrative/Management</span></li>
-                                            <li><i class="fas fa-users"></i> Positions: <span>1</span></li>
-                                            <li><i class="fas fa-briefcase"></i> Job Experience: <span>1 Year</span></li>
-                                            <li><i class="fas fa-calendar"></i> Salary Period: <span>Monthly Pay Period</span></li>
+                                            <li><i class="far fa-calendar-alt"></i> Date Posted: <span><?php $date = new DateTime($job['created_at']); $formatted_date = $date->format('D, d M Y'); echo $formatted_date;?></span></li>
+                                            <li><i class="far fa-calendar-alt"></i> Expiration date: <span><?php $date = new DateTime($job['expire_date']); $formatted_date = $date->format('D, d M Y'); echo $formatted_date;?></span></li>
+                                            <li><i class="fas fa-map-marker-alt"></i> Location: <span><?= $job['location']?></span></li>
+                                            <!-- <li><i class="fas fa-briefcase"></i> Job Type: <span><?= $job['created_at']?></span></li> -->
+                                            <li><i class="fas fa-sitemap"></i> Functional Areas: <span><?= $job['location']?></span></li>
+                                            <li><i class="fas fa-users"></i> Positions: <span><?= $job['position']?></span></li>
+                                            <li><i class="fas fa-briefcase"></i> Job Experience: <span><?= $job['experience']?></span></li>
+                                            <li><i class="fas fa-calendar"></i> Salary: <span><?= $job['salary']?></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -768,7 +797,35 @@ if ($products) {
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    
+                                        <?php if(!empty($related_jobs)){
+                                            foreach($related_jobs as $r_j){
+                                                if($r_j['uid'] != $job['uid']){
+                                        ?>
+                                        <div class="col-md-4">
+                                            <a href="<?= base_url('web/Load/job_details?uid=').$r_j['uid']?>">
+                                                <div class="job-card">
+                                                    <div class="style"></div>
+                                                    <div class="save-icon">
+                                                        <i class="far fa-bookmark"></i>
+                                                    </div>
+                                                    <h3 class="job-title"><?= $r_j['title']?></h3>
+                                                    <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
+                                                    <p class="job-location"><i class="fas fa-map-marker-alt"></i><?= $r_j['location']?></p>
+                                                    <div class="job-skill">
+                                                        <span>Experience: <?= $r_j['experience']?></span>
+                                                        <!-- <span>4+</span> -->
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <?php 
+                                                }
+                                            }
+                                        }
+                                        ?>   
+                                    
+                                    <!-- <div class="col-md-4">
                                         <a href="#">
                                             <div class="job-card">
                                                 <div class="style"></div>
@@ -784,11 +841,12 @@ if ($products) {
                                                 </div>
                                             </div>
                                         </a>    
-                                    </div>
+                                    </div> -->
+                                    
                                 </div>
                                 <div class="row mt-4">
                                     <div class="col text-center">
-                                        <a href="#" class="btn btn-primary">Show all</a>
+                                        <!-- <a href="#" class="btn btn-primary">Show all</a> -->
                                     </div>
                                 </div>
                             </div>

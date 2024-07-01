@@ -891,7 +891,7 @@ if (false) {
                             if($index1 < 6){
                 ?>
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="<?= base_url('web/Load/job_details?uid=').$job['uid']?>">
                         <div class="job-card">
                             <div class="style"></div>
                             <div class="save-icon">
