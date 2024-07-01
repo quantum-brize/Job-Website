@@ -211,7 +211,7 @@
             <a href="<?= base_url('account') ?>">
                 <div class="headertop_right" data-aos="fade-left" data-aos-duration="1500">
                     <p>Account</p>
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" style="color: white;"></i>
                 </div>
             </a>
         </div>
