@@ -381,6 +381,16 @@ class Pages extends Admin
         redirect('/admin/about');
     }
 
+    public function update_logo()
+    {
+        $upload_data = $this->upload_files('./uploads/logo_img/', 'logo_img', IMG_FILE_TYPES, IMG_FILE_SIZE);
+        if ($upload_data) {
+            $this->init_model(MODEL_PAGES);
+            $this->Pages_model->update_logo('/uploads/logo_img/' . $upload_data['file_name']);
+        }
+        redirect('/admin/about');
+    }
+
     public function upload_home_banner_img()
     {
         $upload_data = $this->upload_files('./uploads/home_banner_img/', 'home_banner_img', IMG_FILE_TYPES, IMG_FILE_SIZE);

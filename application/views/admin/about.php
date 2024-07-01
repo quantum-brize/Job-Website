@@ -31,6 +31,20 @@
                             <h6 class="m-0 font-weight-bold text-primary">About</h6>
                         </div>
                         <div class="card-body">
+                            <form action="<?= base_url('admin/pages/update_logo') ?>" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <div>
+                                        <label for="formGroupExampleInput2">Upload Logo Image</label>
+                                    </div>
+                                    <div id="clogoImgPreview">
+                                        <img src="<?= base_url() . $about_text['logo_img'] ?>" height="100" />
+                                    </div>
+                                    <input type="file" class="form-control-file mt-2" placeholder="Logo image" name="logo_img[]" multiple/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-success" id="" value="Update">
+                            </div>
+                            </form>
                             <form action="<?= base_url('admin/pages/update_about_text') ?>" method="POST">
                                 <div class="form-group">
                                     <label for="formGroupExampleInput2">About text </label>

@@ -284,6 +284,16 @@ class Pages_model extends Admin_model
         return $update;
     }
 
+    public function update_logo($data)
+    {
+        $update_data = [
+            'logo_img' => $data,
+        ];
+        $update = $this->db->where(['uid' => 'ABT143276SRHDSH'])
+            ->update('home_about_text', $update_data);
+        return $update;
+    }
+
     public function update_alert_img($path)
     {
         $data = ['img_path' => $path];

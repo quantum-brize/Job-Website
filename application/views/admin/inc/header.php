@@ -18,8 +18,8 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon rotate-n-0">
+                    <img src="<?= base_url(). $data_header['logo_img']?>" style="max-height: 70px; max-with:70px" alt="">
                 </div>
                 <div class="sidebar-brand-text mx-3">Damiano</div>
             </a>
@@ -72,13 +72,13 @@
                     <span>Products</span>
                 </a>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/infrastructure') ?>">
                     <i class="fas fa-building mr-1"></i>
                     <span>Infrastructure</span>
                 </a>
-            </li> -->
+            </li>
             <li class="nav-item">
                 <a class="nav-link"
                     href="<?= base_url('/admin/jobs') ?>">

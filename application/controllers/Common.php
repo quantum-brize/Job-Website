@@ -31,6 +31,7 @@ class Common extends CI_Controller
 	private function load_headers($data)
 	{
 		$this->init_model(MODEL_PAGES);
+		$data['data_header'] = $this->Pages_model->get_all_about_text();
 		$this->load->view('/' . $data['site'] . '/inc/header_link.php', $data);
 		$this->load->view('/' . $data['site'] . '/inc/header.php',  $data);
 
