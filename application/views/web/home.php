@@ -191,83 +191,84 @@ if (false) {
     <script src="https://cdn.wizemen.net/plugins/datepicker/bootstrap-datepicker.js"></script>
 
     <style>
+        /* banner CSS  */
+        .carousel-item {
+            height: 100vh;
+            position: relative;
+        }
 
-      /* banner CSS  */
-    .carousel-item {
-      height: 100vh;
-      position: relative;
-    }
+        .carousel-item img {
+            object-fit: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+        }
 
-    .carousel-item img {
-      object-fit: cover;
-      background-repeat: no-repeat;
-      width: 100%;
-      height: 100%;
-    }
+        .carousel_captions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .carousel_captions {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-      width: 80%; 
-    }
+        #search_area {
+            margin: 40px 0px 0px 0px;
+        }
 
-    .carousel_captions h1 {
-      font-size: 50px;
-      font-weight: 400;
-      color: #000;
-    }
+        .carousel_captions h1 {
+            font-size: 50px;
+            font-weight: 400;
+            color: #000;
+        }
 
-    .carousel_captions .p1 {
-      font-size: 50px;
-      font-weight: 700;
-      color: #2734e3;
-    }
+        .carousel_captions .p1 {
+            font-size: 50px;
+            font-weight: 700;
+            color: #2734e3;
+        }
 
-    .carousel_captions .p2 {
-      margin-top: 16px;
-      font-size: 17px;
-      font-weight: 700;
-      color: #dadada;
-    }
+        .carousel_captions .p2 {
+            margin-top: 16px;
+            font-size: 17px;
+            font-weight: 700;
+            color: #dadada;
+        }
 
-    .search-area {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      width: 60%;
-      margin-bottom: 50px;
-    }
+        /* .search-area {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            width: 60%;
+            margin-bottom: 50px;
+        } */
 
-    .from_wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+        .from_wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .search-area .form-control {
-      border-radius: 20px 0 0 20px;
-      width: 430px;
-      height: 50px; 
-      padding: 25px; 
-    }
+        .search-area .form-control {
+            border-radius: 20px 0 0 20px;
+            width: 430px;
+            height: 50px;
+            padding: 25px;
+        }
 
-    .search-area .btn-primary {
-      border-radius: 0 20px 20px 0;
-      height: 50px;
-      min-width: 80px; 
-      padding: 10px 25px; 
-      margin-bottom: 0;
-    }
-    /* ____________________________ */
+        .search-area .btn-primary {
+            border-radius: 0 20px 20px 0;
+            height: 50px;
+            min-width: 80px;
+            padding: 10px 25px;
+            margin-bottom: 0;
+        }
+
+        /* ____________________________ */
 
 
-    /* COMMON CSS FOR BELOW SECTION HEADING */
+        /* COMMON CSS FOR BELOW SECTION HEADING */
         .heading-container {
             display: flex;
             flex-direction: column;
@@ -275,274 +276,279 @@ if (false) {
             justify-content: center;
         }
 
-        
+
         .heading-container .heading {
             font-size: 37px;
             font-weight: 500;
             white-space: nowrap;
         }
-        
+
         .underline {
             width: 12%;
             margin-top: 5px;
             margin-bottom: 30px;
-            height: 3px; 
+            height: 3px;
             background-color: #f5f5f5;
         }
+
         /* ____________________________ */
 
 
-    /* popular job categories css */
-    .card {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        border-radius: 20px;
-        background-color: #eeeeee;
-        transition: transform 0.2s ease;
-        cursor: pointer;
-        
-    }
+        /* popular job categories css */
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            border-radius: 20px;
+            background-color: #eeeeee;
+            transition: transform 0.2s ease;
+            cursor: pointer;
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    .card-img-top {
-      height: 150px;
-      object-fit: cover;
-    }
-
-    .card-body {
-      padding: 1.25rem;
-    }
-
-    .card-title {
-      text-align: center;
-      font-size: 25px;
-      color: #000;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .card-text {
-      text-align: center;
-      font-size: 15px;
-      font-weight: 500;
-      color: #007bff;
-    }
-
-    .btn-browse-all {
-      background-color: #007bff;
-      color: #fff;
-      border-color: #007bff;
-      padding: 0.75rem 2rem;
-      font-size: 1.25rem;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-browse-all:hover {
-      background-color: #419bfa;
-      color: #fff;
-    }
-
-    .user-icon {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        margin-top: 15px;
-        background-color: #61b7f1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        border-bottom: 7px solid #61b7f1;
-    }
-  
-    .inner-circle-big {
-        bottom: -15px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-    
-    }
-    .inner-circle-small {
-        top: 10px;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background-color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-    }
-    /* ____________________________ */
-
-
-    /* latest job */
-    .latest-jobs {
-        background-color: #f8f9fa;
-        margin-bottom: 20px;
-    }
-
-    .latest-jobs .underline{
-        background-color: #dfdfdf;
-    }
-
-    .job-card {
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 40px;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .style{
-        position: absolute;
-        height: 200px;
-        width: 200px;
-        background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
-        top: -8px;
-        left: -70px;
-        transform: rotate(60deg);
-
-    }
-
-    .job-icon img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 15px;
-    }
-
-    .job-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-    }
-
-    .job-category, .job-location {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 10px;
-    }
-
-    .job-category i, .job-location i {
-        margin-right: 5px;
-        color: lightgrey;
-    }
-
-    .job-skill {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .job-skill span {
-        background: #e9ecef;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        color: #1967d3;
-    }
-
-    .save-icon {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 13px;
-        color: #007bff;
-        cursor: pointer;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        color: #fff;
-        border-color: #007bff;
-        padding: 0.75rem 2rem;
-        font-size: 1.25rem;
-        border-radius: 30px;
-        transition: background-color 0.3s ease;
-        margin-bottom: 50px;
-
-    }
-
-    .btn-browse-all:hover {
-        background-color: #419bfa;
-        color: #fff;
-        }
-    /* ____________________________ */
-
-
-    /* responsiveness for mobile device */
-    @media (max-width: 385px) {
-
-        /* banner section */
-        .banner_main {
-            margin-top: 300px;  /* adjust this property after banner images shown*/
-            padding: 10px;
         }
 
-        .carousel-inner img {
-            height: auto;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .carousel_captions{
-            margin-top: -50px;
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
         }
 
-        .carousel_captions h1 {
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        .card-title {
+            text-align: center;
+            font-size: 25px;
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .card-text {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: #007bff;
+        }
+
+        .btn-browse-all {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-browse-all:hover {
+            background-color: #419bfa;
+            color: #fff;
+        }
+
+        .user-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-top: 15px;
+            background-color: #61b7f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 7px solid #61b7f1;
+        }
+
+        .inner-circle-big {
+            bottom: -15px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+        }
+
+        .inner-circle-small {
+            top: 10px;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+        }
+
+        /* ____________________________ */
+
+
+        /* latest job */
+        .latest-jobs {
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+
+        .latest-jobs .underline {
+            background-color: #dfdfdf;
+        }
+
+        .job-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .style {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: linear-gradient(45deg, rgba(254, 144, 144, 0.8), transparent);
+            top: -8px;
+            left: -70px;
+            transform: rotate(60deg);
+
+        }
+
+        .job-icon img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .job-title {
             font-size: 1.5rem;
-            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        .carousel_captions .p1,
-        .carousel_captions .p2 {
+        .job-category,
+        .job-location {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .job-category i,
+        .job-location i {
+            margin-right: 5px;
+            color: lightgrey;
+        }
+
+        .job-skill {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .job-skill span {
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 5px;
             font-size: 0.9rem;
-            text-align: center;
-        }
-        .search-area {
-            width: 60%;
-            margin-bottom: -70px;
+            color: #1967d3;
         }
 
-        .search-area .form-control {
-            width: 170px;
-            height: 20px; 
-            padding: 12px;
-            font-size: 13px; 
-        }
-
-        .search-area .btn-primary {
+        .save-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
             font-size: 13px;
-            height: 25.6px;
-            padding: 0 6px; 
+            color: #007bff;
+            cursor: pointer;
         }
 
-        /* popular job categories */
-        .job_categories .heading{
-            margin-top: 50px;
-            font-size: 32px;
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            padding: 0.75rem 2rem;
+            font-size: 1.25rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            margin-bottom: 50px;
+
         }
-    }
+
+        .btn-browse-all:hover {
+            background-color: #419bfa;
+            color: #fff;
+        }
+
+        /* ____________________________ */
 
 
+        /* responsiveness for mobile device */
+        @media (max-width: 385px) {
 
-  </style>
+            /* banner section */
+            .banner_main {
+                margin-top: 300px;
+                /* adjust this property after banner images shown*/
+                padding: 10px;
+            }
+
+            .carousel-inner img {
+                height: auto;
+            }
+
+            .carousel_captions {
+                margin-top: -50px;
+            }
+
+            .carousel_captions h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .carousel_captions .p1,
+            .carousel_captions .p2 {
+                font-size: 0.9rem;
+                text-align: center;
+            }
+
+            .search-area {
+                width: 60%;
+                margin-bottom: -70px;
+            }
+
+            .search-area .form-control {
+                width: 170px;
+                height: 20px;
+                padding: 12px;
+                font-size: 13px;
+            }
+
+            .search-area .btn-primary {
+                font-size: 13px;
+                height: 25.6px;
+                padding: 0 6px;
+            }
+
+            /* popular job categories */
+            .job_categories .heading {
+                margin-top: 50px;
+                font-size: 32px;
+            }
+        }
+    </style>
 </head>
 
 <body id="topview">
@@ -604,11 +610,11 @@ if (false) {
                                 <li data-tab="beyondclassroom"><a href="<?= base_url('job') ?>">Jobs</a></li>
                                 <!-- <li data-tab="admissionmenu"><a href="<?= base_url('infrastructure') ?>">Infrastructure</a></li> -->
                                 <li data-tab=""><a href="<?= base_url('contact-us') ?>">Contact us </a></li>
-                                <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
+                                <?php if (!empty($this->session->userdata(SES_USER_ID))) { ?>
                                     <li data-tab=""><a href="<?= base_url('Common/user_logout') ?>">Logout </a></li>
-                                <?php } else {?>
+                                <?php } else { ?>
                                     <li data-tab=""><a href="<?= base_url('login') ?>">Login </a></li>
-                                <?php }?>
+                                <?php } ?>
                             </ul>
                         </div>
 
@@ -679,11 +685,12 @@ if (false) {
 
                             <li class="nav__item"><a href="<?= base_url('contact-us') ?>" class="nav__link">Contact
                                     us</a></li>
-                            <?php if(!empty($this->session->userdata(SES_USER_ID))){?>
-                                <li class="nav__item"><a href="<?= base_url('Common/user_logout') ?>" class="nav__link">Logout</a></li>
-                            <?php } else {?>
+                            <?php if (!empty($this->session->userdata(SES_USER_ID))) { ?>
+                                <li class="nav__item"><a href="<?= base_url('Common/user_logout') ?>"
+                                        class="nav__link">Logout</a></li>
+                            <?php } else { ?>
                                 <li class="nav__item"><a href="<?= base_url('login') ?>" class="nav__link">Login</a></li>
-                            <?php }?>
+                            <?php } ?>
                         </ul>
 
                     </div>
@@ -728,41 +735,49 @@ if (false) {
 
     <!--banner start-->
     <section class="banner_main">
-        
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <?php
-                    if (!empty($banner_images)) {
-                        foreach ($banner_images as $index => $item) {
-                            $banner_active = "";
-                            if($index == 0){
-                                $banner_active = 'active';
-                            }
-                ?>
-                <div class="carousel-item <?= $banner_active; ?>">
-                    <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" class="d-block w-100" alt="Image 1">
-                </div>
-                <?php
-                    }
+        <div class="bg-shadows"></div>
+        <div class="bannerslider owl-carousel owl-theme">
+
+            <?php
+            if (!empty($banner_images)) {
+                foreach ($banner_images as $index => $item) {
+                    ?>
+                    <div class="item">
+                        <img src="<?= base_url() . $item['img_path'] ?>" alt="SCIS-Banner" />
+                    </div>
+                    <?php
                 }
-                ?>
+            }
+            ?>
+        </div>
+        <div class="bannertextviewcurve">
+            
+            <div id="curved2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading'] ?>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
+            <div id="curved1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <?= $banner_text['heading_two'] ?>
+            </div>
+        </div>
+        <div class="fixtextbanner">
+
+            <p><?= $banner_text['corner_text'] ?><br /> <?= $banner_text['corner_text_two'] ?></p>
+        </div>
+        <div class="toptobottomfixed">
+            <a href="#aboutus">
+                <div class="toptobottom pulse">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </div>
             </a>
         </div>
+    </section>
 
-        <div class="carousel_captions">
+    <section id="search_area">
+        <!-- <div class="carousel_captions">
             <h1>It's Easy to Find Your</h1>
             <p class="p1">Join us & Explore Our of Jobs</p>
-            <p class="p2">Find Jobs, Employment & Career Opportunities</p>  
-        </div>
-
+            <p class="p2">Find Jobs, Employment & Career Opportunities</p>
+        </div> -->
         <div class="search-area">
             <form action="#">
                 <div class="from_wrapper">
@@ -779,12 +794,22 @@ if (false) {
     <section class="welcome_main job_categories" id="aboutus">
         <div class="container mt-5">
             <div class="row">
-            <div class="col-12 text-center mb-4 heading-container">
-                <h2 class="heading">Popular Job Categories</h2>
-                <span class="underline"></span>
-            </div>
+                <div class="col-12 text-center mb-4 heading-container">
+                    <h2 class="heading">Popular Job Categories</h2>
+                    <span class="underline"></span>
+                </div>
             </div>
             <div class="row">
+                <?php if (!empty($categories)) {
+                    foreach ($categories as $index => $cat) {
+                        if ($index < 8) {
+                            $total_jobs = count($cat['job']);
+                            ?>
+                            <div class="col-md-3 col-sm-6 mb-4">
+                                <a href="#">
+                                    <div class="card">
+                                        <div class="user-icon">
+                                            <!-- <div class="inner-circle-small"></div>
                 <?php if(!empty($categories)){
                     foreach($categories as $index => $cat){
                         if($index < 8){
@@ -796,12 +821,22 @@ if (false) {
                             <div class="user-icon">
                                 <!-- <div class="inner-circle-small"></div>
                                 <div class="inner-circle-big"></div> -->
-                                <img src="<?= base_url().$cat['icon']?>" alt="" style="max-height:100px; max-width: 100px;">
+                                            <img src="<?= base_url() . $cat['icon'] ?>" alt=""
+                                                style="max-height:100px; max-width: 100px;">
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?= $cat['name'] ?></h5>
+                                            <p class="card-text">Number of jobs <?= $total_jobs ?></p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $cat['name']?></h5>
-                                <p class="card-text">Number of jobs <?= $total_jobs?></p>
-                            </div>
+                        <?php }
+                    }
+                } else { ?>
+
+                <?php } ?>
+                <!-- <div class="col-md-3 col-sm-6 mb-4">
                         </div>
                     </a>
                 </div>
@@ -864,13 +899,15 @@ if (false) {
                         </div>
                     </a>    
             </div> -->
-        </div>
+            </div>
             <div class="row">
                 <div class="col-12 text-center">
+                    <a href="<?= base_url('job') ?>" class="btn btn-browse-all mt-4">Browse All</a
+                        href="<?= base_url('job') ?>">
                     <a href="<?= base_url('categories')?>" class="btn btn-browse-all mt-4">Browse All</a href="<?= base_url('job')?>">
                 </div>
             </div>
-    </div>
+        </div>
     </section>
     <!--Job categories end-->
 
@@ -886,29 +923,31 @@ if (false) {
             </div>
             <div class="row">
                 <?php
-                    if(!empty($jobs)){
-                        foreach($jobs as $index1 => $job){
-                            if($index1 < 6){
-                ?>
-                <div class="col-md-4">
-                    <a href="<?= base_url('web/Load/job_details?uid=').$job['uid']?>">
-                        <div class="job-card">
-                            <div class="style"></div>
-                            <div class="save-icon">
-                                <i class="far fa-bookmark"></i>
+                if (!empty($jobs)) {
+                    foreach ($jobs as $index1 => $job) {
+                        if ($index1 < 6) {
+                            ?>
+                            <div class="col-md-4">
+                                <a href="<?= base_url('web/Load/job_details?uid=') . $job['uid'] ?>">
+                                    <div class="job-card">
+                                        <div class="style"></div>
+                                        <div class="save-icon">
+                                            <i class="far fa-bookmark"></i>
+                                        </div>
+                                        <h3 class="job-title"><?= $job['title'] ?></h3>
+                                        <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
+                                        <p class="job-location"><i class="fas fa-map-marker-alt"></i><?= $job['location'] ?></p>
+                                        <div class="job-skill">
+                                            <span>Experience: <?= $job['experience'] ?></span>
+                                            <!-- <span>4+</span> -->
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                            <h3 class="job-title"><?= $job['title']?></h3>
-                            <p class="job-category"><i class="fas fa-briefcase"></i> Accountants</p>
-                            <p class="job-location"><i class="fas fa-map-marker-alt"></i><?= $job['location']?></p>
-                            <div class="job-skill">
-                                <span>Experience: <?= $job['experience']?></span>
-                                <!-- <span>4+</span> -->
-                            </div>
-                        </div>
-                    </a>    
-                </div>
 
-                <?php }}}?>
+                        <?php }
+                    }
+                } ?>
                 <!-- <div class="col-md-4">
                     <a href="#">
                         <div class="job-card">
@@ -946,7 +985,7 @@ if (false) {
             </div>
             <div class="row mt-4">
                 <div class="col text-center">
-                    <a href="<?= base_url('job')?>" class="btn btn-primary">Browse All</a>
+                    <a href="<?= base_url('job') ?>" class="btn btn-primary">Browse All</a>
                 </div>
             </div>
         </div>
